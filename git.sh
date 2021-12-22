@@ -3,4 +3,5 @@ echo ${commit_message}
 
 git add --all
 git commit -m "${commit_message}"
-git push origin master% 
+branch=`git branch --show-current`
+git push origin $branch
