@@ -47,3 +47,13 @@ You might already have another ng serve process running - make sure to quit that
 My changes are not reflected in the browser (App is not compiling)
 Check if the window running ng serve  displays an error. If that's not the case, make sure you're using the latest CLI version and try restarting your CLI
 ```
+
+### Project Setup and First App
+
+```sh
+sudo npm install -g @angular/cli
+ng new my-first-app
+# Didn't choose Routing and chose CSS
+cd my-first-app
+ng serve -o
+```
