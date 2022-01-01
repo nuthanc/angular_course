@@ -57,3 +57,5 @@ ng new my-first-app
 cd my-first-app
 ng serve -o
 ```
+
+### Check my-first-app's README
