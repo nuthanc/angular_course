@@ -3,5 +3,5 @@
 ### Editing the First App
 
 * In src/app/app.component.html, You can have your html along with dynamic content with double curly braces(Data binding)
-* Inspecting Page Source, you can see the <app-root> tag
+* Inspecting Page Source, you can see the <app-root> tag, which is similar to React's #root div
 * ngModel directive for data binding and for this import FormsModule in app.module.ts
