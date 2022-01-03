@@ -22,3 +22,14 @@
 * Optimizations & NgModules
 * Deployment
 * Animation & Testing
+
+### A Basic Project Setup Using Bootstrap for Styling
+
+```sh
+npm i bootstrap@3
+# angular.json file
+# architect -> build -> styles
+ng serve -o
+```
+* Chrome -> Elements -> head -> styles.css 
+* Source -> styles.css and check for Bootstrap
