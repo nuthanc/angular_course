@@ -41,3 +41,10 @@ ng serve -o
 * app.component.ts -> @Component decorator -> selector app-root -> template -> app.component.html
 * In Page Source, scripts are added at the end by the cli(ng serve) automatically
 * main.ts(First code that gets executed) -> App Module pointing to app.module.ts -> Which in turn points to AppComponent in the bootstrap
+
+### Components are Important!
+
+* Build App by composing from Components
+* app is the root component that holds our entire application
+* Other components are nested within the app component
+* Reusable templates
