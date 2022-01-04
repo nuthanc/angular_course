@@ -33,3 +33,11 @@ ng serve -o
 ```
 * Chrome -> Elements -> head -> styles.css 
 * Source -> styles.css and check for Bootstrap
+
+### How an Angular App gets Loaded and Started
+
+* index.html is served by the Server(Single Page that is served)
+* app-root in body
+* app.component.ts -> @Component decorator -> selector app-root -> template -> app.component.html
+* In Page Source, scripts are added at the end by the cli(ng serve) automatically
+* main.ts(First code that gets executed) -> App Module pointing to app.module.ts -> Which in turn points to AppComponent in the bootstrap
