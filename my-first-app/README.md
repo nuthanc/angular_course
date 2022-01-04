@@ -48,3 +48,10 @@ ng serve -o
 * app is the root component that holds our entire application
 * Other components are nested within the app component
 * Reusable templates
+
+### Creating a New Component
+
+* Create under src/app(For e.g server Component)
+* Name of the folder same as name of the Component
+* Create ts file and export the Component class
+  * Decorate it with Component decorator with selector(unique string which points to the html tag) and templateUrl
