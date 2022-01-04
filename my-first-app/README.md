@@ -55,3 +55,10 @@ ng serve -o
 * Name of the folder same as name of the Component
 * Create ts file and export the Component class
   * Decorate it with Component decorator with selector(unique string which points to the html tag) and templateUrl
+
+### Understanding the Role of AppModule and Component Declaration
+
+* Need to add new Component in app.module.ts declarations inside NgModule decorator to make Angular aware of the Component
+  * By default, Angular will not scan all the files
+* imports are Angular modules we are importing
+* bootstrap is telling which Component Angular should be aware of when the App starts
