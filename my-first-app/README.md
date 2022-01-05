@@ -78,3 +78,9 @@ ng g c servers
 * spec file is for testing
 * The cli does declaration, selector creation and other things automatically
 * In app.component.html, provide Servers Component tag and in Servers html, render Server Component twice
+
+### Working With Component Templates
+
+* Inline templates by replacing templateUrl with template
+* Use backtick for multi-line strings
+* template or templateUrl is mandatory for a Component, selector and styleUrls are optional
