@@ -84,3 +84,10 @@ ng g c servers
 * Inline templates by replacing templateUrl with template
 * Use backtick for multi-line strings
 * template or templateUrl is mandatory for a Component, selector and styleUrls are optional
+* More code in separate file(templateUrl) and when there is less code, place it in template
+
+### Working with Component Styles
+
+* styleUrls is an array, so can use multiple stylesheets
+* Use the css file(app.component.css) or inline styles by replacing styleUrls with styles
+* Use backtick for multi-line strings
