@@ -62,3 +62,7 @@ ng serve -o
   * By default, Angular will not scan all the files
 * imports are Angular modules we are importing
 * bootstrap is telling which Component Angular should be aware of when the App starts
+
+### Using Custom Components
+
+* Add the Server Component selector in app.component.html to render it
