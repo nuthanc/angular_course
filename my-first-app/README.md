@@ -97,3 +97,14 @@ ng g c servers
 * Can use Attribute and class selector instead of normal Element selector
 * Selecting by ID and Pseudo selectors won't work
 * Typically use Element selector for Components
+
+### Practising Components
+
+* Create 2 new Components: WarningAlert and SuccessAlert
+* Output them beneath each other in the AppComponent
+* Output a warning or success message in the Components
+* Style the Components appropriately
+```sh
+ng g c warningAlert
+ng g c successAlert
+```
