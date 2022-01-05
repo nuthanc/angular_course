@@ -91,3 +91,9 @@ ng g c servers
 * styleUrls is an array, so can use multiple stylesheets
 * Use the css file(app.component.css) or inline styles by replacing styleUrls with styles
 * Use backtick for multi-line strings
+
+### Fully Understanding the Component Selector
+
+* Can use Attribute and class selector instead of normal Element selector
+* Selecting by ID and Pseudo selectors won't work
+* Typically use Element selector for Components
