@@ -66,3 +66,15 @@ ng serve -o
 ### Using Custom Components
 
 * Add the Server Component selector in app.component.html to render it
+
+### Creating Components with the CLI and Nesting Components
+
+```sh
+ng generate component servers 
+# Or shortcut
+ng g c servers
+```
+* The above will generate the Component template
+* spec file is for testing
+* The cli does declaration, selector creation and other things automatically
+* In app.component.html, provide Servers Component tag and in Servers html, render Server Component twice
