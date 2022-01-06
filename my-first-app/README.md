@@ -131,3 +131,12 @@ ng g c successAlert
 * HTML after being parsed by browser has different properties
 * Property Binding allows to interact directly binding with the properties of the native html element
 * Used with [property-name]="value"
+* Write Typescript code within the quoation marks without using the curly braces
+
+### Property Binding vs String Interpolation
+
+* Check servers.component.html for both String Interpolation and Property Binding
+* String Interpolation
+  * Output something in template
+* Property Binding
+  * Change property
