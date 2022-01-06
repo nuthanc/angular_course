@@ -125,3 +125,9 @@ ng g c successAlert
 * Usage: double curly braces in html and value defined in ts file
 * Can be String or anything that can be resolved to String
 * Multi-line expression, Block expression and if and for Control structure not allowed,but ternary expression is allowed
+
+### Property Binding
+
+* HTML after being parsed by browser has different properties
+* Property Binding allows to interact directly binding with the properties of the native html element
+* Used with [property-name]="value"
