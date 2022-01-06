@@ -108,3 +108,14 @@ ng g c servers
 ng g c warningAlert
 ng g c successAlert
 ```
+
+### What is Databinding
+
+* Communication between TypeScript Code(Business Logic) and Template(HTML)
+* Output Data from TypeScript code to the Template
+  * String Interpolation ({{ data }})
+  * Property Binding ([property]="data")
+* Template(Like User clicking on a button) to TypeScript code : React to User Events
+  * Event Binding ((event)="expression")
+* Combination of Both:
+  * Two-way-Binding ([(ngModel)]="data")
