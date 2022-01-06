@@ -140,3 +140,9 @@ ng g c successAlert
   * Output something in template
 * Property Binding
   * Change property
+
+### Event Binding
+
+* onclick attribute on the HTML element, but we are gonna use Angular's Event Binding
+* Used with (event-name)="method()"
+  * event-name without the on, e.g onclick will be click, onmouseenter will be mouseenter etc
