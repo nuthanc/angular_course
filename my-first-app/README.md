@@ -146,3 +146,8 @@ ng g c successAlert
 * onclick attribute on the HTML element, but we are gonna use Angular's Event Binding
 * Used with (event-name)="method()"
   * event-name without the on, e.g onclick will be click, onmouseenter will be mouseenter etc
+
+### Passing and Using Data with Event Binding
+
+* $event(Keyword) passed as parameter when called during Event Binding
+* Explicit casting (<HTMLInputElement>event.target)
