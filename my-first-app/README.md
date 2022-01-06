@@ -119,3 +119,9 @@ ng g c successAlert
   * Event Binding ((event)="expression")
 * Combination of Both:
   * Two-way-Binding ([(ngModel)]="data")
+
+### String Interpolation
+
+* Usage: double curly braces in html and value defined in ts file
+* Can be String or anything that can be resolved to String
+* Multi-line expression, Block expression and if and for Control structure not allowed,but ternary expression is allowed
