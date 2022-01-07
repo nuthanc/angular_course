@@ -151,3 +151,12 @@ ng g c successAlert
 
 * $event(Keyword) passed as parameter when called during Event Binding
 * Explicit casting (<HTMLInputElement>event.target)
+
+### Two-Way-Databinding
+
+* Combining both **property and event binding**
+* Two-Way-Databinding allows communication in both the directions
+* Reacting to both in both directions
+* Using ngModel and propertyName for the input, we do 2 way databinding
+  * The change in input updates the propertyName(Event binding)
+  * Also the change in property name elsewhere updates the value of the input element(Property binding)
