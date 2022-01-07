@@ -160,3 +160,11 @@ ng g c successAlert
 * Using ngModel and propertyName for the input, we do 2 way databinding
   * The change in input updates the propertyName(Event binding)
   * Also the change in property name elsewhere updates the value of the input element(Property binding)
+
+### Combining All Forms of Data Binding
+
+* All of the four covered in Servers Component
+  * Event Binding
+  * String Interpolation
+  * Property Binding
+  * Two Way Binding
