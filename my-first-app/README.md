@@ -177,6 +177,7 @@ ng g c successAlert
 
 * Directives are Instructions in the DOM
   * Components are also Directives(with a Template): It's a directive because it instructs Angular to select the particular element(selector) and add the Template
+* Directives are mainly used with Attribute Selector
 ```txt
 Another Example
 
@@ -190,4 +191,18 @@ Attribute style Selector
 export class TurnGreenDirective {
   ...
 }
+```
+
+### Using ngIf to Output Data Conditionally
+
+* ngIf works like an if statement
+* It should return true or false
+* Star is required because ngIf is a Structural Directive(Changes the structure of our DOM) which is an extra info for Angular
+* Hook created in HTML to check where to add
+```html
+<button _ngcontent-tnh-c44="" class="btn btn-primary"> Add New Server
+</button>
+<!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
 ```

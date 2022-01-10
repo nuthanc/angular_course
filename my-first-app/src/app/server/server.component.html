@@ -1,11 +1,17 @@
-<label>Username</label>
-<input type="text" class="form-control" [(ngModel)]="username">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <label>Username</label>
+      <input type="text" class="form-control" [(ngModel)]="username">
 
-<p>{{ username }}</p>
+      <p>{{ username }}</p>
 
-<!-- Author used [disabled]="username === ''" -->
-<!-- For click, (click)="username = ''" -->
-<button [disabled]="!username" class="btn btn-success"
-(click)="onReset()">
-  Login User
-</button>
+      <!-- Author used [disabled]="username === ''" -->
+      <!-- For click, (click)="username = ''" -->
+      <button [disabled]="!username" class="btn btn-success"
+      (click)="onReset()">
+        Login User
+      </button>
+    </div>
+  </div>
+</div>
