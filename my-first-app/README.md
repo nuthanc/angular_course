@@ -172,3 +172,22 @@ ng g c successAlert
 ### Practising Databinding
 
 * Check Server Component
+
+### Understanding Directives
+
+* Directives are Instructions in the DOM
+  * Components are also Directives(with a Template): It's a directive because it instructs Angular to select the particular element(selector) and add the Template
+```txt
+Another Example
+
+Attribute style Selector
+
+<p appTurnGreen>Receives a green background!</p>
+
+@Directive({
+  selector: '[appTurnGreen]'
+})
+export class TurnGreenDirective {
+  ...
+}
+```
