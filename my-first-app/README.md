@@ -168,3 +168,7 @@ ng g c successAlert
   * String Interpolation
   * Property Binding
   * Two Way Binding
+
+### Practising Databinding
+
+* Check Server Component

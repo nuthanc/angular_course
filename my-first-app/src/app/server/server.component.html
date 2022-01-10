@@ -1,1 +1,11 @@
-<p>The {{ 'Server' }} Component with id {{ serverId }} is {{ getServerStatus() }} </p>
+<label>Username</label>
+<input type="text" class="form-control" [(ngModel)]="username">
+
+<p>{{ username }}</p>
+
+<!-- Author used [disabled]="username === ''" -->
+<!-- For click, (click)="username = ''" -->
+<button [disabled]="!username" class="btn btn-success"
+(click)="onReset()">
+  Login User
+</button>

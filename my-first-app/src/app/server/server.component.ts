@@ -7,8 +7,13 @@ import { Component } from "@angular/core";
 export class ServerComponent {
   serverId = 10;
   serverStatus = 'offline';
+  username = '';
 
   getServerStatus() {
     return this.serverStatus;
+  }
+
+  onReset() {
+    this.username = '';
   }
 }
