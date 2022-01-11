@@ -216,3 +216,9 @@ export class TurnGreenDirective {
   <p>Server not created</p>
 </ng-template>
 ```
+
+### Styling Elements Dynamically with ngStyle
+
+* Attribute Directives don't add or remove elements. They only change the element they were placed on(Without a *)
+* ngStyle directive along with Property Binding to provide background color
+  * Property name also happens to be ngStyle
