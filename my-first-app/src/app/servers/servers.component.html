@@ -9,7 +9,10 @@
 >
   Add New Server
 </button>
-<p *ngIf="addText">{{ serverCreationStatus }}</p>
+<p *ngIf="addText; else noServer">{{ serverCreationStatus }}</p>
+<ng-template #noServer>
+  <p>Server not created</p>
+</ng-template>
 <!-- String Interpolation -->
 <!-- <p>{{ allowNewServer }}</p>  -->
 

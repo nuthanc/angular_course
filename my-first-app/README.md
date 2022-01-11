@@ -206,3 +206,13 @@ export class TurnGreenDirective {
   "ng-reflect-ng-if": "false"
 }-->
 ```
+
+### Enhancing ngIf with and Else Condition
+
+* Using ng-template(directive used to mark places in the DOM) along with marker #(Local reference)
+```html
+<p *ngIf="addText; else noServer">{{ serverCreationStatus }}</p>
+<ng-template #noServer>
+  <p>Server not created</p>
+</ng-template>
+```
