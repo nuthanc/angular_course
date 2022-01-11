@@ -222,3 +222,13 @@ export class TurnGreenDirective {
 * Attribute Directives don't add or remove elements. They only change the element they were placed on(Without a *)
 * ngStyle directive along with Property Binding to provide background color
   * Property name also happens to be ngStyle
+  * Value is a JS object
+
+### Applying CSS Classes Dynamically with ngClass
+
+* ngClass for dynamically applying css classes
+* ngClass is also used with property binding
+* Value is a JS object
+  * Key is the classname and the value is a condition which decides whether it should be attached or not
+* If the class contains a dash, we need to wrap within single quotes
+  * [ngClass]="{'online-class': serverStatus === 'online'}"

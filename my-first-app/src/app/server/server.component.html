@@ -16,4 +16,9 @@
   </div>
 </div>
 
-<p [ngStyle]="{backgroundColor: getColor()}">Server created with status {{ serverStatus }}</p>
+<p
+  [ngStyle]="{backgroundColor: getColor()}"
+  [ngClass]="{online: serverStatus === 'online'}"
+>
+  Server created with status {{ serverStatus }}
+</p>
