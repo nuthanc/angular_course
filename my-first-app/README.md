@@ -232,3 +232,7 @@ export class TurnGreenDirective {
   * Key is the classname and the value is a condition which decides whether it should be attached or not
 * If the class contains a dash, we need to wrap within single quotes
   * [ngClass]="{'online-class': serverStatus === 'online'}"
+
+### Outputting Lists with ngFor
+
+* Use ngFor structural directive(*) for iterating 

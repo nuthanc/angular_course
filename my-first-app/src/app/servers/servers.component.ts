@@ -14,6 +14,7 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'Server not yet created';
   serverName = 'Nuthan';
+  servers = ['Apache', 'Nginx']
   addText = false;
 
   constructor() {
@@ -23,6 +24,7 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
+    this.servers.push(this.serverName);
     this.addText = true;
     this.serverCreationStatus = 'Server Created! with name '+this.serverName;
   }
