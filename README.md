@@ -58,4 +58,29 @@ cd my-first-app
 ng serve -o
 ```
 
-### Check my-first-app's README
+## Check my-first-app's README which covers The Basics
+
+## Course Project - The Basics
+
+* Project containing Shopping List and Recipe Book Features
+
+### Planning the App
+
+* Think of the layout(General structure of App), what Components it needs
+* Start with the *Features*
+  * Shopping List section
+  * Recipe Book section
+* To contain this, we need a root Component which is *App*
+* To navigate between Shopping List and Recipe Book we need a *Header*
+* Shopping List can have the following Components
+  * Shopping List: This will display the data
+  * Shopping List Edit: This is for providing the data
+* Recipe Book can have the following Components
+  * Recipe List: Data containing the list of Recipes
+  * Recipe Item: Each Recipe as a own Item since it holds a good amount of info
+  * Recipe Detail: See info about a Recipe upon Selection
+* Each Component is focussing on one main Topic like displaying a list, displaying info about single item
+  * Can be split even more or Merge them according to your requirements
+* Model to be used: Data for representation
+  * We should define how it looks like
+  * Ingredient(name and amount) and Recipe(title, url, description, ingredients...)
