@@ -131,7 +131,7 @@ ng g c successAlert
 * HTML after being parsed by browser has different properties
 * Property Binding allows to interact directly binding with the properties of the native html element
 * Used with [property-name]="value"
-* Write Typescript code within the quoation marks without using the curly braces
+* Write Typescript code within the quotation marks without using the curly braces
 
 ### Property Binding vs String Interpolation
 
@@ -236,3 +236,10 @@ export class TurnGreenDirective {
 ### Outputting Lists with ngFor
 
 * Use ngFor structural directive(*) for iterating 
+
+### Directives Assignment
+
+```sh
+ng g c details
+```
+* Check details Component
