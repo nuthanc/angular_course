@@ -84,3 +84,12 @@ ng serve -o
 * Model to be used: Data for representation
   * We should define how it looks like
   * Ingredient(name and amount) and Recipe(title, url, description, ingredients...)
+
+### Setting up the Application
+
+```sh
+ng new basics
+# No to Routing and chose CSS
+cd basics
+```
+* Check the rest in basics folder
