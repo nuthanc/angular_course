@@ -27,3 +27,7 @@ ng g c recipes/recipe-list/recipe-item --skip-tests true
 
 ng g c shopping-list/shopping-edit --skip-tests true
 ```
+
+### Using the Components
+
+* 
