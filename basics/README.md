@@ -68,3 +68,7 @@ collapsed = true;
 ### Creating a Recipe Model
 
 * Create recipe.model.ts in recipes folder
+
+### Adding Content to the Recipe Components
+
+* Open Image in New Tab from Google Images
