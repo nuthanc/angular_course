@@ -64,3 +64,7 @@ and add this line to header.component.ts:
 
 collapsed = true;
 ```
+
+### Creating a Recipe Model
+
+* Create recipe.model.ts in recipes folder
