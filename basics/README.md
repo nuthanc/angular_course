@@ -30,4 +30,8 @@ ng g c shopping-list/shopping-edit --skip-tests true
 
 ### Using the Components
 
-* 
+* Add content to the html of the Components
+
+### Adding a Navigation Bar
+
+* Add bootstrap's navbar in Header Component
