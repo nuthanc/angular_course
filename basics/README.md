@@ -72,3 +72,4 @@ collapsed = true;
 ### Adding Content to the Recipe Components
 
 * Open Image in New Tab from Google Images
+* Content in recipe-list.component.html
