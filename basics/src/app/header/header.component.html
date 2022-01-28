@@ -1,0 +1,15 @@
+<!-- My Implementation -->
+<a
+(click)="currentPage='shopping-list'">Shopping List</a>
+<br>
+<a
+(click)="currentPage='recipe-book'">Recipe Book</a>
+<br>
+
+<p>I'm now showing {{currentPage}}</p>
+
+<app-shopping-list *ngIf="currentPage === 'shopping-list'">
+</app-shopping-list>
+
+<app-recipes *ngIf="currentPage === 'recipe-book'">
+</app-recipes>
