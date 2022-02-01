@@ -77,3 +77,7 @@ collapsed = true;
 ### Outputting a List of Recipes with ngFor
 
 * Author used Property binding for image src
+
+### Displaying Recipe Details
+
+* Add in recipe-detail.component.html
