@@ -81,3 +81,7 @@ collapsed = true;
 ### Displaying Recipe Details
 
 * Add in recipe-detail.component.html
+
+### Working on the Shopping List Component
+
+* Add in shopping-list.component.html
