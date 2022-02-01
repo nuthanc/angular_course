@@ -73,3 +73,7 @@ collapsed = true;
 
 * Open Image in New Tab from Google Images
 * Content in recipe-list.component.html
+
+### Outputting a List of Recipes with ngFor
+
+* Author used Property binding for image src
