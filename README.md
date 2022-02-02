@@ -107,3 +107,9 @@ cd basics
 * Debugging Logical errors are difficult
 * Chrome, go to Sources -> main.bundle.js -> Find the code like splice(E.g) and click on number to create a Breakpoint
 * Even more convenient way to search is Go to webpack folder -> . -> There you will find the same directory structure
+* js to ts code mapping
+
+### Using Augury to Dive into Angular Apps
+
+* Google for Angular Augury(now deprecated I guess)
+* Instead use Angular Dev Tools
