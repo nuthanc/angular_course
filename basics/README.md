@@ -95,3 +95,8 @@ collapsed = true;
 ### Creating and Outputting the Shopping List
 
 * Add in shopping-list.component.html
+
+### Adding a Shopping  List Edit Section
+
+* Add in shopping-edit.component.html
+* I had to add margin-right of 4 px for the buttons for some space whereas Author didn't had to as there was already space
