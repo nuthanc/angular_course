@@ -93,3 +93,11 @@ ng new basics
 cd basics
 ```
 * Check the rest in basics folder
+
+## Debugging
+
+### Understanding Angular Error Messages
+
+* Open Console to check the errors
+* Line number is not relevant as the files get merged
+* Check upon clicking which button or any other element this happens and check the Directives for that element
