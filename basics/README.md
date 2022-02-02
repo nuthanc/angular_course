@@ -100,3 +100,7 @@ collapsed = true;
 
 * Add in shopping-edit.component.html
 * I had to add margin-right of 4 px for the buttons for some space whereas Author didn't had to as there was already space
+
+### Wrap Up & Next Steps
+
+* Next Steps of Debugging and Component communication
