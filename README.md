@@ -101,3 +101,9 @@ cd basics
 * Open Console to check the errors
 * Line number is not relevant as the files get merged
 * Check upon clicking which button or any other element this happens and check the Directives for that element
+
+### Debugging Code in the Browser Using Sourcemaps
+
+* Debugging Logical errors are difficult
+* Chrome, go to Sources -> main.bundle.js -> Find the code like splice(E.g) and click on number to create a Breakpoint
+* Even more convenient way to search is Go to webpack folder -> . -> There you will find the same directory structure
