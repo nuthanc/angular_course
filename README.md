@@ -113,3 +113,7 @@ cd basics
 
 * Google for Angular Augury(now deprecated I guess)
 * Instead use Angular Dev Tools
+
+# Attaching cmp-databinding-start
+
+* Check its README
