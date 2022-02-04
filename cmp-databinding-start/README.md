@@ -7,3 +7,10 @@
 ng g c cockpit --skip-tests true
 ng g c server-element --skip-tests true
 ```
+
+### Property & Event Binding Overview
+
+* Property & Event Binding can be used in
+  * HTML Elements: Native Properties & Events
+  * Directives: Custom Properties & Events
+  * Components: Custom Properties & Events
