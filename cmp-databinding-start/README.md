@@ -31,3 +31,8 @@ ng g c server-element --skip-tests true
 * Use of new EventEmitter with Generic type and emit it when event occurs in the sub-component
 * Need to use @Output() to expose it to the outside world
 * Event Bind in the App Component's template
+
+### Assigning an Alias to Custom Events
+
+* Similar to @Input, we can add an alias to the property of the Component by passing it as an argument to @Output
+* This will expose it by the alias name to the outside world
