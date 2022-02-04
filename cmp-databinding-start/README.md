@@ -25,3 +25,9 @@ ng g c server-element --skip-tests true
 
 * Alias can be used for the property by passing the alias name in the argument of Input Decorator
 * That alias name is what is exposed now to the outside world
+
+### Binding to Custom Events
+
+* Use of new EventEmitter with Generic type and emit it when event occurs in the sub-component
+* Need to use @Output() to expose it to the outside world
+* Event Bind in the App Component's template
