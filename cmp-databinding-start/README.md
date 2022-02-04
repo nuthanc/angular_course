@@ -36,3 +36,10 @@ ng g c server-element --skip-tests true
 
 * Similar to @Input, we can add an alias to the property of the Component by passing it as an argument to @Output
 * This will expose it by the alias name to the outside world
+
+### Custom Property and Event Binding Summary
+
+* Property Binding with @Input allows us to bind Properties of Child Components from Parent Component
+* Event Binding allows us to add Custom events from the Sub-component and use it in the Parent Component
+* Now this communication is from Child to Parent, but what about Child to Child or where the distance between the 2 components is huge, then this would get complicated as we need to build a chain of Inputs and Outputs
+* Another approach in services section
