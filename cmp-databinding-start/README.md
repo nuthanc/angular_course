@@ -20,3 +20,8 @@ ng g c server-element --skip-tests true
 * Define element property in server-element Component
 * Add @Input() decorator to it to expose it to other Components
 * Use it as Property binding in App component
+
+### Assigning an Alias to Custom Properties
+
+* Alias can be used for the property by passing the alias name in the argument of Input Decorator
+* That alias name is what is exposed now to the outside world
