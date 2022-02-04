@@ -14,3 +14,9 @@ ng g c server-element --skip-tests true
   * HTML Elements: Native Properties & Events
   * Directives: Custom Properties & Events
   * Components: Custom Properties & Events
+
+### Binding to Custom Properties
+
+* Define element property in server-element Component
+* Add @Input() decorator to it to expose it to other Components
+* Use it as Property binding in App component
