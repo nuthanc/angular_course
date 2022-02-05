@@ -60,3 +60,23 @@ ng g c server-element --skip-tests true
 p[_ngcontent-prr-c42]
 ```
 * Angular emulates Shadow DOM where each element will have a Shadow DOM behind it, where you then could assign styles to each element
+
+### More on View Encapsulation
+
+* There is a property called **encapsulation** in Component Decorator where we can switch the ViewEncapsulation to None, ShadowDom and Emulated(default)
+* When the ViewEncapsulation is set to None, then the attributes specific to a Component won't be applied by Angular to the html elements
+* Also, the selectors won't have the attribute selector
+* So the styles applied in this Component will be applied globally
+* When ViewEncapsulation is ShadowDom, its behavior is similar to Emulated but this applies only in Browsers supporting ShadowDom technology
+```html
+<p><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><em>TestContent</em><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p>
+```
+```css
+p {
+    color: blue;
+}
+```
