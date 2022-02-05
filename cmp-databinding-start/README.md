@@ -43,3 +43,20 @@ ng g c server-element --skip-tests true
 * Event Binding allows us to add Custom events from the Sub-component and use it in the Parent Component
 * Now this communication is from Child to Parent, but what about Child to Child or where the distance between the 2 components is huge, then this would get complicated as we need to build a chain of Inputs and Outputs
 * Another approach in services section
+
+### Understanding View Encapsulation
+
+* Now, since the p in App Component was moved to Server-Element Component, the p style in App Component's css doesn't work
+* This is a behaviour enforced by Angular where each Component's html elements get assigned an attribute specific to the Component
+* You can check this in Inspect
+```html
+<p _ngcontent-prr-c42=""><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><em _ngcontent-prr-c42="">TestContent</em><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p>
+```
+```css
+p[_ngcontent-prr-c42]
+```
+* Angular emulates Shadow DOM where each element will have a Shadow DOM behind it, where you then could assign styles to each element
