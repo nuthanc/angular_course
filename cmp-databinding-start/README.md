@@ -80,3 +80,10 @@ p {
     color: blue;
 }
 ```
+
+### Using Local References in Templates
+
+* There's no requirement for 2 way data binding in cockpit template as we are just providing the value on Click events and updating the server or the blueprint
+* Instead, we can use a Local reference as an attribute to the Element(#)
+* The Local Reference then can be used anywhere in the Template
+* The Local Reference holds the Element to which it is attached
