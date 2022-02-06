@@ -105,3 +105,10 @@ If you DON'T access the selected element in ngOnInit (but anywhere else in your 
 
 If you're using Angular 9+, you only need to add { static: true } (if needed) but not { static: false }.
 ```
+
+### Getting Access to the Template & DOM with @ViewChild
+
+* With Local Reference, we can access the value of the element in Typescript code only after passing in the method of an event
+* If we want to get value even before calling the method, we can use @ViewChild() Decorator with argument as the name of the Local reference or Component
+* nativeElement property will give the underlying elements properties
+* We shouldn't modify the values of the DOM from this even though we can as it is bad practise. The better way of doing is from Property Binding or String Interpolation
