@@ -112,3 +112,11 @@ If you're using Angular 9+, you only need to add { static: true } (if needed) bu
 * If we want to get value even before calling the method, we can use @ViewChild() Decorator with argument as the name of the Local reference or Component
 * nativeElement property will give the underlying elements properties
 * We shouldn't modify the values of the DOM from this even though we can as it is bad practise. The better way of doing is from Property Binding or String Interpolation
+
+### Projecting Content into Components with ng-content
+
+* If you want to add Content between Opening and Closing tags of a Component, then add that content, also in the Desired Component, add ng-content tag
+* ng-content is a Directive which serves a Hook
+* This is a very nice feature for reusable Widgets
+* This is a very good alternative for Property Binding
+* Example of moving p tag from server-element to app
