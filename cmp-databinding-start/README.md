@@ -120,3 +120,23 @@ If you're using Angular 9+, you only need to add { static: true } (if needed) bu
 * This is a very nice feature for reusable Widgets
 * This is a very good alternative for Property Binding
 * Example of moving p tag from server-element to app
+
+### Understanding the Component Lifecycle
+
+* Angular has different Lifecycle Hooks(methods) we can hook into
+* ngOnChanges: Called after a bound input property changes
+  * This is executed multiple times
+  * Right at the start when a new Component is created
+  * Also when properties decorated with @Input changes
+* ngOnInit: Called once the Component is initialized
+  * Once Angular finishes Basic Initilization(After the Component Object was created)
+  * Runs after the Constructor
+* ngDoCheck: Called during every change detection run
+  * Runs multiple times
+  * Like something in the Template changes or the Component changes
+  * Even if nothing changes, but if a element is clicked, timer fired etc, even then this Hook runs
+* ngAfterContentInit: Called after content(ng-content) has been projected into view
+* ngAfterContentChecked: Called every time the projected content has been checked
+* ngAfterViewInit: Called after the component's view (and child views) has been intialized
+* ngAfterViewChecked: Called every time the view (and child views) has been checked
+* ngOnDestroy: Called once the component is about to be destroyed
