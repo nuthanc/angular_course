@@ -128,6 +128,7 @@ If you're using Angular 9+, you only need to add { static: true } (if needed) bu
   * This is executed multiple times
   * Right at the start when a new Component is created
   * Also when properties decorated with @Input changes
+  * This receives changes of SimpleChanges type as Argument
 * ngOnInit: Called once the Component is initialized
   * Once Angular finishes Basic Initilization(After the Component Object was created)
   * Runs after the Constructor
@@ -137,6 +138,59 @@ If you're using Angular 9+, you only need to add { static: true } (if needed) bu
   * Even if nothing changes, but if a element is clicked, timer fired etc, even then this Hook runs
 * ngAfterContentInit: Called after content(ng-content) has been projected into view
 * ngAfterContentChecked: Called every time the projected content has been checked
+  * Called after every Change Detection cycle
 * ngAfterViewInit: Called after the component's view (and child views) has been intialized
 * ngAfterViewChecked: Called every time the view (and child views) has been checked
 * ngOnDestroy: Called once the component is about to be destroyed
+
+### Seeing Lifecycle Hooks in Action
+
+* Check server-element Component for the Lifecycle methods
+* It's sufficient to just add the Lifecycle methods but add the interfaces as well in implements
+* Note for ngOnChanges, there should be a change in Object. Change in property of an object doeesn't have an impact
+  * So name property of ServerElement is used for Demo
+  * Since it is a primitive type, the change is considered for ngOnChanges
+```txt
+## Straight after ng serve -o
+
+Constructor called
+ngOnChanges called
+Object
+ngOnInit called
+ngDoCheck called
+ngAfterContentInit called
+ngAfterContentChecked called
+ngAfterViewInit called
+ngAfterViewChecked called
+core.js:27988 Angular is running in development mode. Call enableProdMode() to enable production mode.
+ngDoCheck called
+ngAfterContentChecked called
+ngAfterViewChecked called
+
+## After Clicking on Add Server
+
+Constructor called
+ngDoCheck called
+ngAfterContentChecked called
+ngAfterViewChecked called
+ngOnChanges called
+server-element.component.ts:24 {element: SimpleChange, name: SimpleChange} ... expand to check more properties 
+ngOnInit called
+ngDoCheck called
+ngAfterContentInit called
+ngAfterContentChecked called
+ngAfterViewInit called
+ngAfterViewChecked called
+
+## After Clicking on Change First Element button
+
+ngOnChanges called
+{name: SimpleChange}
+ngDoCheck called
+ngAfterContentChecked called
+ngAfterViewChecked called
+
+## After Clicking on Destroy First Element button
+
+ngOnDestroy called
+```
