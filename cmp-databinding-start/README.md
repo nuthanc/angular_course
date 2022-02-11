@@ -194,3 +194,9 @@ ngAfterViewChecked called
 
 ngOnDestroy called
 ```
+
+### Lifecycle Hooks and Template Access
+
+* We'll only get the contents of the ViewChild property in ngAfterViewInit(Referencing ServerElement Component)
+* If we try to access that in ngOnInit, we get Empty value
+* So ngAfterViewInit gets access to the Template elements and not before this Hook because it hasn't been rendered yet
