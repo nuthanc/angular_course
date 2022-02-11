@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control (startPressed)="onStartPressed($event)">
+      </app-game-control>
+      <hr />
+      <ng-container *ngFor="let number of numbers">
+        <app-odd *ngIf="number % 2 === 1">
+          <p>Odd - {{ number }}</p>
+        </app-odd>
+        <app-even *ngIf="number % 2 === 0" [num]="number">
+        </app-even>
+      </ng-container>
+    </div>
+  </div>
+</div>

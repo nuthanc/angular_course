@@ -90,7 +90,7 @@ collapsed = true;
 
 * Create shared folder and place the ingredient.model.ts file there
   * Because this file is required in both shopping-list and recipes
-* TypeScript shortcut for defining an assiging in constructor
+* TypeScript shortcut for defining and assiging in constructor
 
 ### Creating and Outputting the Shopping List
 
