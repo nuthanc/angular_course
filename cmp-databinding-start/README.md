@@ -200,3 +200,9 @@ ngOnDestroy called
 * We'll only get the contents of the ViewChild property in ngAfterViewInit(Referencing ServerElement Component)
 * If we try to access that in ngOnInit, we get Empty value
 * So ngAfterViewInit gets access to the Template elements and not before this Hook because it hasn't been rendered yet
+
+### Getting Access to ng-content with @ContentChild
+
+* Now from App Component, since we are passing content(within app-server-element), we can use it by placing a local reference and getting the value
+* To get the value in the AppComponent, we use ViewChild and to get it within the Server Element Component, we use ContentChild Decorator since this is a Content
+* In the Lifecycle method, we get access to the value in ngAfterContentInit Hook
