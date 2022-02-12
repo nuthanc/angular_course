@@ -122,3 +122,7 @@ cd basics
 
 * ng new cmp-databinding-exercise
 * Check its README
+
+## Course Project - Components & Databinding
+
+* Copied basics-course and renamed to cmp-databinding-course
