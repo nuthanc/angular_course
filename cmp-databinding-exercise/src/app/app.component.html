@@ -6,7 +6,7 @@
       <hr />
       <ng-container *ngFor="let number of numbers">
         <app-odd *ngIf="number % 2 === 1">
-          <p>Odd - {{ number }}</p>
+          <p style="color: orange">Odd - {{ number }}</p>
         </app-odd>
         <app-even *ngIf="number % 2 === 0" [num]="number">
         </app-even>
