@@ -6,8 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./even.component.css'],
 })
 export class EvenComponent implements OnInit {
-  @Input() num!: number;
-
+  // @Input() num: number;
+  @Input() number: number;
   constructor() {}
 
   ngOnInit(): void {}

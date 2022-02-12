@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <app-game-control (startPressed)="onStartPressed($event)">
-      </app-game-control>
+      <!-- <app-game-control (startPressed)="onStartPressed($event)">
       <hr />
       <ng-container *ngFor="let number of numbers">
         <app-odd *ngIf="number % 2 === 1">
@@ -11,6 +10,18 @@
         <app-even *ngIf="number % 2 === 0" [num]="number">
         </app-even>
       </ng-container>
+    </div> -->
+      <app-game-control (intervalFired)="onIntervalFired($event)">
+      </app-game-control>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber">
+      </app-odd>
+      <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber">
+      </app-even>
     </div>
   </div>
 </div>

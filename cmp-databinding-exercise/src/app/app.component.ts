@@ -6,9 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  numbers: number[] = [];
+  // numbers: number[] = [];
 
-  onStartPressed(number: number) {
-    this.numbers.push(number);
+  // onStartPressed(number: number) {
+  //   this.numbers.push(number);
+  // }
+
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
+
+  onIntervalFired(firedNumber: number) {
+    if(firedNumber % 2 === 0) {
+      this.evenNumbers.push(firedNumber);
+    } else {
+      this.oddNumbers.push(firedNumber);
+    }
   }
 }
