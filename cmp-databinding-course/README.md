@@ -8,3 +8,8 @@
 ### Passing Recipe Data with Property Binding
 
 * Use Input and Property Binding to get the data from recipe-list to recipe-item
+
+### Passing Data with Event and Property Binding
+
+* Author used recipeWasSelected event in recipe-list for recipe-item, but I used click event directly which led to lesser code
+* Components modified are recipe-list, recipe-item, recipes and recipe-detail

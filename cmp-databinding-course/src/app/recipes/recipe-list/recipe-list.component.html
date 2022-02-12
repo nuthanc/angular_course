@@ -11,9 +11,16 @@
       <app-recipe-item [recipe]="recipe"></app-recipe-item>
     </a> -->
 
+    <!-- My Implementation for Recipe Detail -->
+    <!-- <app-recipe-item
+      *ngFor="let recipeEl of recipes"
+      [recipe]="recipeEl"
+      (click)="selectRecipe(recipeEl)"
+    ></app-recipe-item> -->
     <app-recipe-item
       *ngFor="let recipeEl of recipes"
       [recipe]="recipeEl"
+      (recipeWasSelected)="onRecipeSelected(recipeEl)"
     ></app-recipe-item>
   </div>
 </div>
