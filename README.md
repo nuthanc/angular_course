@@ -126,3 +126,9 @@ cd basics
 ## Course Project - Components & Databinding
 
 * Copied basics-course and renamed to cmp-databinding-course
+
+## Directives Deep Dive
+
+### Module Introduction
+
+* Attribute Directives(Only affects the element they are added to) and Structural Directives(Change the structure of the DOM)
