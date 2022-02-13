@@ -7,3 +7,7 @@
 "jasmine-core": "~3.8.0",
 "karma-jasmine-html-reporter": "^1.7.0"
 ```
+
+### ngClass and ngStyle Recap
+
+* ngClass and ngStyle implementation in app.component.html
