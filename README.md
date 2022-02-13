@@ -132,3 +132,7 @@ cd basics
 ### Module Introduction
 
 * Attribute Directives(Only affects the element they are added to) and Structural Directives(Change the structure of the DOM)
+
+## Attaching directives-start
+
+* check its README
