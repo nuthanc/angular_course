@@ -46,3 +46,10 @@ ng g d better-highlight/better-highlight
 * It takes any valid events as argument
 * The method being decorated implements our functionality and receives the event as argument
 * Checkout the example in better-highlight
+
+### Using HostBinding to Bind to Host Properties
+
+* It's not wrong to use Renderer, but there is an easier way for this usecase using HostBinding Decorator
+* HostBinding binds to the property of the element on which the Directive sits on and it's the first argument
+* It can bind to any property of the Host
+* We have bound to style property and backgroundColor sub-property
