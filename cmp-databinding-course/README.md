@@ -13,3 +13,8 @@
 
 * Author used recipeWasSelected event in recipe-list for recipe-item, but I used click event directly which led to lesser code
 * Components modified are recipe-list, recipe-item, recipes and recipe-detail
+
+### Allowing the User to add Ingredient to the Shopping List
+
+* Using Local references and passing them in Events or using ViewChild to get its value without passing in the method
+* Components changed: ShoppingEdit and ShoppingList
