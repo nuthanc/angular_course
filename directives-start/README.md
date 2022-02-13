@@ -35,3 +35,7 @@ ng g d better-highlight/better-highlight
 * Then in ngOnInit, you can setStyle for the elementRef with the renderer
 * setStyle(el: any, style: string, value: any, flags?: RendererStyleFlags2)
     * flags value are like important etc
+
+### More about Renderer
+
+* https://angular.io/api/core/Renderer2
