@@ -39,3 +39,10 @@ ng g d better-highlight/better-highlight
 ### More about Renderer
 
 * https://angular.io/api/core/Renderer2
+
+### Using HostListener to Listen to Host Events
+
+* Using HostListener Decorator, we can react to Events of the elements that the Directive sits on
+* It takes any valid events as argument
+* The method being decorated implements our functionality and receives the event as argument
+* Checkout the example in better-highlight
