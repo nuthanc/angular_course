@@ -23,3 +23,15 @@
     * Injection is getting to access to other classes without having to instantiate them on our own
 * Then mention the directive class in app.module.ts
 * Finally, use it in any Template
+
+### Using the Renderer to Build a Better Attribute Directive
+
+* You shouldn't change the nativeElement directly as it not a best practise and it wouldn't work in Service Workers where Angular renders without a DOM
+* So the best practise is to use a Renderer
+```sh
+ng g d better-highlight/better-highlight
+```
+* In the constructor, get both the elementRef and the renderer
+* Then in ngOnInit, you can setStyle for the elementRef with the renderer
+* setStyle(el: any, style: string, value: any, flags?: RendererStyleFlags2)
+    * flags value are like important etc
