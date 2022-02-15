@@ -79,3 +79,9 @@ ng g d better-highlight/better-highlight
 
 <p appBetterHighlight defaultColor="yellow">
 ```
+
+### What Happens Behind the Scenes on Structural Directives
+
+* Behind the scenes Angular transforms *ngIf="!onlyOdd" to <template [ngIf]="!onlyOdd">
+* ng-template is an element which itself is not rendered but allows Angular to render conditionally
+* Check this app component's template
