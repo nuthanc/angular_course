@@ -93,3 +93,8 @@ ng g d better-highlight/better-highlight
     * This is still a property but a set method for the property where it executes whenever the value changes
     * This property should have the same name as the Directive or same alias in Input argument
 * Get TemplateRef(what) and viewReference(where should we render) and set viewReference to the template based on condition or clear it
+
+### Understanding ngSwitch
+
+* Instead of having multiple ngIf directives, we can have ngSwitch with ngSwitchCase and ngSwitchDefault
+* Check app component's value property for this
