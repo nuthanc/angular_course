@@ -85,3 +85,11 @@ ng g d better-highlight/better-highlight
 * Behind the scenes Angular transforms *ngIf="!onlyOdd" to <template [ngIf]="!onlyOdd">
 * ng-template is an element which itself is not rendered but allows Angular to render conditionally
 * Check this app component's template
+
+### Building a Structural Directive
+
+* Create a new Directive using ng g d unless
+* Create a Input property with a set method
+    * This is still a property but a set method for the property where it executes whenever the value changes
+    * This property should have the same name as the Directive or same alias in Input argument
+* Get TemplateRef(what) and viewReference(where should we render) and set viewReference to the template based on condition or clear it
