@@ -53,3 +53,29 @@ ng g d better-highlight/better-highlight
 * HostBinding binds to the property of the element on which the Directive sits on and it's the first argument
 * It can bind to any property of the Host
 * We have bound to style property and backgroundColor sub-property
+
+### Binding to Directive Properties
+
+* Right now for the color to highlight, we are statically assigning it
+* But we can pass dynamically with @Input
+* Set default color taken from Parent Component in ngOnInit
+    * If it is done outside, initially the color won't be set from the Parent and will be taken from the Component
+* Alias of same name as the Directive can be given in the Input and can be used to set values
+```txt
+<p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'orange'">Hello World styled with Renderer</p>
+
+# Instead of the above, appBetterHighlight which is the same name as Directive selector
+@Input('appBetterHighlight') highlightColor = 'red'
+
+<p [appBetterHighlight]="'brown'" [defaultColor]="'yellow'">Hello World styled with Renderer</p>
+```
+* While passing String values in Property Binding, it should be enclosed in single quotes(''), otherwise it will think it is some variable or local reference name
+```txt
+[defaultColor]="'yellow'
+```
+* If string is the value being passed, then while Property binding the square brackets([]) can be removed and single quotes also be removed from the String
+```txt
+<p appBetterHighlight [defaultColor]="'yellow'">
+
+<p appBetterHighlight defaultColor="yellow">
+```
