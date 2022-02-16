@@ -43,4 +43,10 @@
   * AppModule: Same Instance of Service is available **Application-wide**
   * AppComponent: Same Instance of service is **available for all Components(but not for other Services)**
   * Any Other Component: Same Instance of Service is availabe fo the **Component and all its child components**
-* Our status is not working because it is getting Overwritten in the higher level
+* Our status is not working because it is getting Overwritten(as it will be a New Instance)
+
+### How Many Instances of Service should it be
+
+* There are 3 Instances of the Service in our App now, 1 in App, 1 in Account and the last 1 in New Account
+* We can make it one instance by removing in the providers in Account and New Account, but leave the property in the constructor
+  * constructor tells Angular that we need an Instance and the provider will tell which Instance(same instance or different instance)
