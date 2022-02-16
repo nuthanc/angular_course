@@ -33,3 +33,14 @@
 * Input in Account Component is still left as is as we are receiving the Inputs from the App component
 * Most initializations should be done in ngOnInit and not in constructor as shown in app component
 * The Logs are working, but the status is not changing and the New account in not added
+
+### Understanding the Hierarchical Injector
+
+* The Angular Dependency Injector is a Hierarchical Injector
+* The same instance of the service is available for the Component and its children if it is injected in the Component
+* But if the Injection is in the child, then the same Service instance won't be available to the Parent
+* Service Provided levels:
+  * AppModule: Same Instance of Service is available **Application-wide**
+  * AppComponent: Same Instance of service is **available for all Components(but not for other Services)**
+  * Any Other Component: Same Instance of Service is availabe fo the **Component and all its child components**
+* Our status is not working because it is getting Overwritten in the higher level
