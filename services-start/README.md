@@ -7,6 +7,7 @@
 "jasmine-core": "~3.8.0",
 "karma-jasmine-html-reporter": "^1.7.0"
 ```
+* npm install @types/node --save-dev
 
 ### Creating a Logging Service
 
