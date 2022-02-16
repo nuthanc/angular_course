@@ -136,3 +136,7 @@ cd basics
 ## Attaching directives-start
 
 * check its README
+
+## Course Project - Directives
+
+* Copied cmp-databinding-course and renamed to directives-course
