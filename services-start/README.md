@@ -16,3 +16,10 @@
 * Create and export a class for Logging Service
 * For Usage, we don't instantiate a class in the required Component and call the logStatusChange method
 * Angular provides a much better method to access the Service
+
+### Injecting the Logging Service into Components
+
+* In the constructor, add the **property and the type**(Mandatory) of the Service class name
+* Access specifier such as public or private is specified before it as a shortcut to define and instantiate the property
+* Since Angular is the one creating the Components(Instantiate), we need to specify **providers** in the Decorator and mention the class name
+* This lets the Service stay in the Angular Ecosystem
