@@ -23,3 +23,13 @@
 * Access specifier such as public or private is specified before it as a shortcut to define and instantiate the property
 * Since Angular is the one creating the Components(Instantiate), we need to specify **providers** in the Decorator and mention the class name
 * This lets the Service stay in the Angular Ecosystem
+
+### Creating a Data Service
+
+* Another usecase of Service is to act as Data Storage
+* Check accounts.service.ts for this
+* The accounts array and the methods from App Component are moved there
+* With this, Output and EventEmitters can be removed from New Account and Account components
+* Input in Account Component is still left as is as we are receiving the Inputs from the App component
+* Most initializations should be done in ngOnInit and not in constructor as shown in app component
+* The Logs are working, but the status is not changing and the New account in not added
