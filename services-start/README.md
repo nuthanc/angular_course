@@ -7,3 +7,11 @@
 "jasmine-core": "~3.8.0",
 "karma-jasmine-html-reporter": "^1.7.0"
 ```
+
+### Creating a Logging Service
+
+* Let's create a Logging Service which will just console log
+* For this create logging.service.ts in app folder
+* Create and export a class for Logging Service
+* For Usage, we don't instantiate a class in the required Component and call the logStatusChange method
+* Angular provides a much better method to access the Service
