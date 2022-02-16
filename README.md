@@ -140,3 +140,11 @@ cd basics
 ## Course Project - Directives
 
 * Copied cmp-databinding-course and renamed to directives-course
+
+## Using Services & Dependency Injection
+
+### Module Introduction
+
+* What are Services?
+  * It's a Centralized Business Unit
+  * Prevents Duplication of code and Provides Data Storage
