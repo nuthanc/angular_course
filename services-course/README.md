@@ -33,3 +33,13 @@ ng g s shopping-list/shopping-list
 * Setup ShoppingListService simliar to RecipeService
 * Setting Providers for ShoppingListService in app.module because we would require in Recipe secton as well
 * But after adding new ingredient from UI(from shopping-edit component), we don't see the new item
+
+### Using Services for Pushing Data from A to B
+
+* In the previous section, the addition of new item was not working because while getting the Ingredients using getIngredients, we are slicing it, so a different copy of ingredients is sent
+* But when addIngredient is called, we are pushing to the original ingredients array and not the copy
+* To solve this, there are 2 approaches
+  * 1 Sending this.ingredients instead of slice in getIngredients
+  * The other is through EventEmitter notifying that there is a new Ingredient
+    * ingredientsChanged in ShoppingListService
+    * subscribing to it in ShoppingList Component
