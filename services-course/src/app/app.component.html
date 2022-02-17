@@ -1,0 +1,21 @@
+<!-- My Implementation -->
+
+<!-- <app-header (linkClick)="onLinkClick($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="currentPage === 'Recipes'"></app-recipes>
+      <app-shopping-list *ngIf="currentPage === 'Shopping List'"></app-shopping-list>
+    </div>
+  </div>
+</div> -->
+
+<app-header (featureSelected)="onNavigate($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="loadedFeature === 'recipes'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipes'"></app-shopping-list>
+    </div>
+  </div>
+</div>

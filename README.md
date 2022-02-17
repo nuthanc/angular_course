@@ -152,3 +152,7 @@ cd basics
 ## Attaching services-start and services-assignment-solution
 
 * Check its README
+
+## Course Project - Services and Dependecy Injection
+
+* Copied directives-course and renamed to services-course
