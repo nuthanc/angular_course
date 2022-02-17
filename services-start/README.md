@@ -59,3 +59,11 @@
 ```txt
 We recommend adding @Injectable() to every service class, even those that don't have dependencies and, therefore, do not technically require it
 ```
+
+### Using Services for Cross-Component Communication
+
+* Earlier if we wanted communication between Account Component and New Account Component, we had to setup multi layer Input and Output decorators starting from Account Component to App Component to New Account Component
+* But with services, it is so easier
+* We can setup the EventEmitter in the AccountsService and emit the event(statusUpdated) from the Account Component and subscribe to it in the New Account Component
+* EventEmitter wraps an Observable
+* This makes Cross-Component Communication easier
