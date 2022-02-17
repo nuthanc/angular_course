@@ -20,3 +20,10 @@ ng g s shopping-list/shopping-list
   * Note: If we return this.recipes in getRecipe, we are passing the same Instance(direct reference) of recipe
   * Therefore we are using splice to return a duplicate copy of the recipes
 * We are using providers in the Recipes component
+
+### Using a Service for Cross-Component Communication
+
+* We can take out the series of Input and Output and use RecipeService
+* For that, create a property called recipeSelect which of type EventEmitter<Recipe>
+  * Note: We are using EventEmitter and not just Recipe property because changing just the Recipe won't notify the other Components relying on this
+* With this, we can emit event in the recipe-item and subscribe to it in the recipes component
