@@ -50,3 +50,12 @@
 * There are 3 Instances of the Service in our App now, 1 in App, 1 in Account and the last 1 in New Account
 * We can make it one instance by removing in the providers in Account and New Account, but leave the property in the constructor
   * constructor tells Angular that we need an Instance and the provider will tell which Instance(same instance or different instance)
+
+### Injecting Services into Services
+
+* Let's try to use Logging Service in Accounts Service
+* For Injecting service to another service, we need to use providers in the app.module level
+* Also, we need to mark the service where we are injecting as Injectable(in AccountsService)
+```txt
+We recommend adding @Injectable() to every service class, even those that don't have dependencies and, therefore, do not technically require it
+```

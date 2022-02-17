@@ -6,13 +6,13 @@ import { AccountsService } from "../accounts.service";
   selector: "app-new-account",
   templateUrl: "./new-account.component.html",
   styleUrls: ["./new-account.component.css"],
-  providers: [LoggingService],
+  // providers: [LoggingService],
 })
 export class NewAccountComponent {
   // @Output() accountAdded = new EventEmitter<{ name: string; status: string }>();
 
   constructor(
-    private loggingService: LoggingService,
+    // private loggingService: LoggingService,
     private accountService: AccountsService
   ) {}
 
@@ -26,7 +26,7 @@ export class NewAccountComponent {
     // const service = new LoggingService();
     // service.logStatusChange(accountStatus);
 
-    this.loggingService.logStatusChange(accountStatus);
+    // this.loggingService.logStatusChange(accountStatus);
     // console.log('A server status changed, new status: ' + accountStatus);
   }
 }
