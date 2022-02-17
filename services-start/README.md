@@ -67,3 +67,27 @@ We recommend adding @Injectable() to every service class, even those that don't 
 * We can setup the EventEmitter in the AccountsService and emit the event(statusUpdated) from the Account Component and subscribe to it in the New Account Component
 * EventEmitter wraps an Observable
 * This makes Cross-Component Communication easier
+
+### Services in Angular 6+
+
+```txt
+If you're using Angular 6+ (check your package.json  to find out), you can provide application-wide services in a different way.
+
+Instead of adding a service class to the providers[]  array in AppModule , you can set the following config in @Injectable() :
+
+@Injectable({providedIn: 'root'})
+export class MyService { ... }
+This is exactly the same as:
+
+export class MyService { ... }
+and
+
+import { MyService } from './path/to/my.service';
+
+@NgModule({
+    ...
+    providers: [MyService]
+})
+export class AppModule { ... }
+Using this new syntax is completely optional, the traditional syntax (using providers[] ) will still work. The "new syntax" does offer one advantage though: Services can be loaded lazily by Angular (behind the scenes) and redundant code can be removed automatically. This can lead to a better performance and loading speed - though this really only kicks in for bigger services and apps in general.
+```
