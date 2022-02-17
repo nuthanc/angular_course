@@ -27,3 +27,9 @@ ng g s shopping-list/shopping-list
 * For that, create a property called recipeSelect which of type EventEmitter<Recipe>
   * Note: We are using EventEmitter and not just Recipe property because changing just the Recipe won't notify the other Components relying on this
 * With this, we can emit event in the recipe-item and subscribe to it in the recipes component
+
+### Adding the Shopping List Service
+
+* Setup ShoppingListService simliar to RecipeService
+* Setting Providers for ShoppingListService in app.module because we would require in Recipe secton as well
+* But after adding new ingredient from UI(from shopping-edit component), we don't see the new item
