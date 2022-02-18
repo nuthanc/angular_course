@@ -14,3 +14,15 @@
   * But this is bad since it reloads the Page and Application state is lost
 * The better way to do it is using routerLink property binding
   * Since the value is string, we can remove the brackets from routerLink and single quotes from the string value
+
+### Understanding Navigation Paths
+
+* In the routerLink value, if the path is preceded by '/', that is absolute path
+* If that is not there, then it will be relative path(Relative to the url(Component) you are in) which appends to your current path. Examples
+  * routerLink="servers"
+    * If you add this in servers component, then it will be localhost:4200/servers/servers
+  * routerLink="./servers"
+    * This is same as the above example
+  * routerLink="../servers"
+    * This is going one directory up and then servers
+* From App Component, we can either add '/' or provide directly because it is in root path

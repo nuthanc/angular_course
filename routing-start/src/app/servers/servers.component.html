@@ -10,6 +10,12 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
+    <!-- The below doesn't work because it will be localhost:4200/servers/servers -->
+    <a routerLink="servers">Reload</a> 
+    <br>
+    <a routerLink="../servers">Reload which works</a>
+    <br>
+    <a routerLink="/servers">Reload which also works</a>
     <app-edit-server></app-edit-server>
     <hr>
     <app-server></app-server>
