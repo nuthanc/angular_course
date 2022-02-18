@@ -164,3 +164,7 @@ cd basics
 * Till now, we are in localhost:4200/ and not changing the url
 * We are just using Javascript to change parts of the DOM
 * Let's learn Routing which still helps us to use a Single Page but allows the change of url
+
+## Attaching routing-start
+
+* Check its README
