@@ -26,3 +26,12 @@
   * routerLink="../servers"
     * This is going one directory up and then servers
 * From App Component, we can either add '/' or provide directly because it is in root path
+
+### Styling Active Router Links
+
+* Use routerLinkActive directive to bind to a class based on which path it is on
+  * Path is determined by the routerLink
+  * routerLinkActive can bound to the link element or the parent bounding it
+    * Bound to parent(li) in this case because of Bootstrap
+* routerLinkActive is based on contains and because of this even Home(/) gets active when Servers(/servers) or Users(/users) are active because / is present in /servers and /users
+  * To prevent this, we add  [routerLinkActiveOptions]="{ exact: true }" as seen in App Component
