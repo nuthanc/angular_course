@@ -43,3 +43,8 @@ ng g s shopping-list/shopping-list
   * The other is through EventEmitter notifying that there is a new Ingredient
     * ingredientsChanged in ShoppingListService
     * subscribing to it in ShoppingList Component
+
+### Adding Ingredients to Recipes
+
+* In the Recipe model and service, add Ingredients
+* Finally in the RecipeDetail component, use ul and li to display the Ingredient name and amount
