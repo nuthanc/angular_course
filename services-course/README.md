@@ -48,3 +48,9 @@ ng g s shopping-list/shopping-list
 
 * In the Recipe model and service, add Ingredients
 * Finally in the RecipeDetail component, use ul and li to display the Ingredient name and amount
+
+### Passing Ingredients from Recipes to the Shopping List (via a Service)
+
+* We can have 2 approach here
+  * Directly access shoppingListService in recipe-detail and add Ingredients(For this, I need to add RecipeService in app.module)
+  * Use recipeService and call shoppingListService

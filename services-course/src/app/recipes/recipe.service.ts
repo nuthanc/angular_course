@@ -1,9 +1,10 @@
-// import { Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { EventEmitter } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from "../shopping-list/shopping-list.service";
 import { Recipe } from './recipe.model';
 
-// @Injectable()
+@Injectable()
 export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
 
@@ -11,7 +12,7 @@ export class RecipeService {
     new Recipe(
       'Big Fat Burger',
       'What else do you need to say?',
-      'http://www.pngall.com/wp-content/uploads/2016/05/Burger.png',
+      'https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246__480.jpg',
       [new Ingredient('Buns', 2), new Ingredient('Meat', 1)]
     ),
     new Recipe(
@@ -21,15 +22,20 @@ export class RecipeService {
       [
         new Ingredient('Chicken', 1),
         new Ingredient('Tomatoes', 2),
-        new Ingredient('Tomatoes', 2),
         new Ingredient('Oil', 1),
         new Ingredient('Onion', 2),
       ]
     ),
   ];
 
+  constructor(private slService: ShoppingListService) {}
+
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  addIngredientsToShoppingList(ingredients: Ingredient[]) {
+    this.slService.addIngredients(ingredients);
   }
   // selectedRecipe!: Recipe;
 
