@@ -35,3 +35,9 @@
     * Bound to parent(li) in this case because of Bootstrap
 * routerLinkActive is based on contains and because of this even Home(/) gets active when Servers(/servers) or Users(/users) are active because / is present in /servers and /users
   * To prevent this, we add  [routerLinkActiveOptions]="{ exact: true }" as seen in App Component
+
+### Navigating Programmatically
+
+* Let's say we want to do some Complex operation first and then navigate to a different page from our Typescript code
+* To do this, we can get the router property in the constructor(Import Router from angular core) and then navigate to the path(Path is an array)
+* We used absolute path, but we can use relative path too, but we need to control what path should this be relative to
