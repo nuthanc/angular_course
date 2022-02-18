@@ -39,5 +39,13 @@
 ### Navigating Programmatically
 
 * Let's say we want to do some Complex operation first and then navigate to a different page from our Typescript code
-* To do this, we can get the router property in the constructor(Import Router from angular core) and then navigate to the path(Path is an array)
+* To do this, we can get the router property(injected) in the constructor(Import Router from angular core) and then navigate to the path(Path is an array)
 * We used absolute path, but we can use relative path too, but we need to control what path should this be relative to
+* Example in Home Component
+
+### Using Relative Paths in Programmatic Navigation
+
+* To use Relative Paths in the Programmatic Navigation(done using router property), we should use relativeTo option in navigate
+* And relativeTo takes ActivatedRoute which can be injected in the constructor
+* ActivatedRoute is the current route of the Component
+* By default relativeTo is the root Route
