@@ -61,3 +61,12 @@
 * For fetching the dynamic path segment, in the Typescript file inject Activated route
 * Use route.snapshot.params of particular property which is defined in the dynamic path segment
 * Check user Component
+
+### Fetching Route Parameters Reactively
+
+* If we redirect to the same Component(even though the url changes) using routerLink, then Angular won't reinstantiate the Component
+* So it doesn't know if the data changed
+* So we need to use subscribe method on the ActivatedRoute's params
+  * subscribe returns an Observable
+  * An Observable is for Asynchronous code and subscribes for an event(which might happen in the future) and calls some method
+* We only need to subscribe if we are reloading the same url but with different content, else only snapshot(First initialization) is sufficient
