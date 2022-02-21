@@ -104,3 +104,10 @@ const id = Number(this.route.snapshot.params['id']);
 // Alternative
 const id = +this.route.snapshot.params['id'];
 ```
+
+### Setting Up Child(Nested) Routes
+
+* In the app module's appRoutes, in the Route object(path, component..), we can add children and add the nested routes
+  * Path of parent is removed in the nested path
+* After this add router-outlet directive in the Parent Component
+* Check Servers and Users Component for this
