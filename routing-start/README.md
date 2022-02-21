@@ -87,3 +87,10 @@
 * To pass query parameters in template, we use queryParams property(takes object as value) and for Hash fragments, we use fragment property
 * Check Servers Component's for this
 * To do it programmatically(In Home Component), we use 2nd argument of Navigate method where queryParams and fragment can be used in the object
+
+### Retrieving Query Parameters and Fragments
+
+* Check EditServer Component
+* To Retrieve, we can inject the ActivatedRoute in the constructor and get (snapshot.queryParams and snapshot.fragment)
+* But if QueryParams or fragments change in the same Component(path), then simliar to params we can subscribe to queryParams and fragment
+* Angular does unsubscribing for us behind the scenes when the Component is destroyed
