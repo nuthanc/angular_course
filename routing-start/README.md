@@ -49,3 +49,9 @@
 * And relativeTo takes ActivatedRoute which can be injected in the constructor
 * ActivatedRoute is the current route of the Component
 * By default relativeTo is the root Route
+
+### Passing Parameters to Routes
+
+* We can add dynamic routes using :id
+  * After colon can be anything
+* Check app.module.ts for dynamic route to UserComponent
