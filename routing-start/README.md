@@ -94,3 +94,13 @@
 * To Retrieve, we can inject the ActivatedRoute in the constructor and get (snapshot.queryParams and snapshot.fragment)
 * But if QueryParams or fragments change in the same Component(path), then simliar to params we can subscribe to queryParams and fragment
 * Angular does unsubscribing for us behind the scenes when the Component is destroyed
+
+### Practicing and some Common Gotchas
+
+* Update proper routerLinks in users and servers component
+* In Server component, get the Params id
+```js
+const id = Number(this.route.snapshot.params['id']);
+// Alternative
+const id = +this.route.snapshot.params['id'];
+```
