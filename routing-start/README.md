@@ -78,3 +78,12 @@
 * But you can call it in onDestroy hook
 * But for Custom Observables, we need to do it manually in onDestroy
 * Check User Component
+
+### Passing Query Parameters and Fragments
+
+* Query Parameters(?key=value)
+* Hash fragemnts(#) are for jumping to a particular section
+* Add EditServerComponent route in app.module.ts and add routerLinks in servers Component
+* To pass query parameters in template, we use queryParams property(takes object as value) and for Hash fragments, we use fragment property
+* Check Servers Component's for this
+* To do it programmatically(In Home Component), we use 2nd argument of Navigate method where queryParams and fragment can be used in the object
