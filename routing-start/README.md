@@ -111,3 +111,12 @@ const id = +this.route.snapshot.params['id'];
   * Path of parent is removed in the nested path
 * After this add router-outlet directive in the Parent Component
 * Check Servers and Users Component for this
+
+### Using Query Parameters - Practice
+
+* Add button in server component to edit it
+* On clicking it, use Programmatic navigation to Edit Server component
+* [queryParams]="{allowEdit: server.id === 3? '1': '0'}"
+* Add the above in Servers Template, so that only Server 3 is allowed to edit
+* In Edit Server, add allowEdit property
+* But when Edit is clicked, the query param disappears
