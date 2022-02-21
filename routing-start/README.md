@@ -70,3 +70,11 @@
   * subscribe returns an Observable
   * An Observable is for Asynchronous code and subscribes for an event(which might happen in the future) and calls some method
 * We only need to subscribe if we are reloading the same url but with different content, else only snapshot(First initialization) is sufficient
+
+### An Important Note about Route Observables
+
+* The subscription will always live on in memory because it is not closely tied to the Component
+* Angular automatically does unsubscribing for you behind the scenes when the Component is destroyed
+* But you can call it in onDestroy hook
+* But for Custom Observables, we need to do it manually in onDestroy
+* Check User Component
