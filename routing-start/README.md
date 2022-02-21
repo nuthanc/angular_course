@@ -52,6 +52,12 @@
 
 ### Passing Parameters to Routes
 
-* We can add dynamic routes using :id
+* We can add dynamic path segment(routes) using :id
   * After colon can be anything
 * Check app.module.ts for dynamic route to UserComponent
+
+### Fetching Route Parameters
+
+* For fetching the dynamic path segment, in the Typescript file inject Activated route
+* Use route.snapshot.params of particular property which is defined in the dynamic path segment
+* Check user Component
