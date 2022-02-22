@@ -151,3 +151,10 @@ To fix this behavior, you need to change the matching strategy to "full" :
 
 Now, you only get redirected, if the full path is ''  (so only if you got NO other content in your path in this example).
 ```
+
+### Outsourcing the Route Configuration
+
+* When there are more than 2 routes, we can move the appRoutes a separate module like app-routing.module.ts
+* There export class and have it  decorated by NgModule
+* Provide RouterModule.forRoot(appRoutes) in the imports and add RouterModule in the exports(what should be accessible to the module which imports this)
+* No need to provide declarations as it is already provided in app module
