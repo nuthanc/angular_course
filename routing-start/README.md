@@ -162,3 +162,12 @@ Now, you only get redirected, if the full path is ''  (so only if you got NO oth
 ### An Introduction to Guards
 
 * Running some piece of code before the Component is loaded in the route
+
+### Protecting Routes with canActivate
+
+* Implement AuthGuard service which implements the CanActivate interface
+* Also have AuthService for simulating authentication with Promise and setTimeout
+* In canActivate method of auth-guard return boolean for now after resolving
+* Add these 2 services in App module's providers
+* In App Routing module, add canActivate in the Route
+  * This will apply as Guard to both Parent and its children
