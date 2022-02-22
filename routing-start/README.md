@@ -158,3 +158,7 @@ Now, you only get redirected, if the full path is ''  (so only if you got NO oth
 * There export class and have it  decorated by NgModule
 * Provide RouterModule.forRoot(appRoutes) in the imports and add RouterModule in the exports(what should be accessible to the module which imports this)
 * No need to provide declarations as it is already provided in app module
+
+### An Introduction to Guards
+
+* Running some piece of code before the Component is loaded in the route
