@@ -171,3 +171,7 @@ Now, you only get redirected, if the full path is ''  (so only if you got NO oth
 * Add these 2 services in App module's providers
 * In App Routing module, add canActivate in the Route
   * This will apply as Guard to both Parent and its children
+
+### Protecting Child (Nested) Routes with canActivateChild
+
+* If we want to apply Guard only to the child routes, then we can use canActivateChild in the route and implement canActivateChild interface in the Guard
