@@ -175,3 +175,7 @@ Now, you only get redirected, if the full path is ''  (so only if you got NO oth
 ### Protecting Child (Nested) Routes with canActivateChild
 
 * If we want to apply Guard only to the child routes, then we can use canActivateChild in the route and implement canActivateChild interface in the Guard
+
+### Using a Fake Auth Service
+
+* Add Login and Logout button in Home Component to call auth service's login and logout respectively on click
