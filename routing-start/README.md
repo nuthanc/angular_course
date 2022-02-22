@@ -179,3 +179,14 @@ Now, you only get redirected, if the full path is ''  (so only if you got NO oth
 ### Using a Fake Auth Service
 
 * Add Login and Logout button in Home Component to call auth service's login and logout respectively on click
+
+### Controlling Navigation with canDeactivate
+
+* If want to run some code before leaving the route(deactivating the route), we can use canDeactivate in appRoutes(For EditServerComponent)
+* A Guard needs to be a service, but we need the Component's property to decide what should be done 
+* So we have service and interface and interface's method is implemented in the Component
+* We need to implement CanDeactivateGuard service and CanComponentDeactive interface
+* Don't forget to add CanDeactivateGuard in app.module's providers
+* EditServer Component should implement CanComponentDeactivate interface
+* Check edit-server component and can-deactivate-guard.service.ts
+* This is useful for preventing accidentally navigating away
