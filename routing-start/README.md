@@ -109,7 +109,7 @@ const id = +this.route.snapshot.params['id'];
 
 * In the app module's appRoutes, in the Route object(path, component..), we can add children and add the nested routes
   * Path of parent is removed in the nested path
-* After this add router-outlet directive in the Parent Component
+* After this add **router-outlet** directive in the *Parent Component*
 * Check Servers and Users Component for this
 
 ### Using Query Parameters - Practice
@@ -120,3 +120,8 @@ const id = +this.route.snapshot.params['id'];
 * Add the above in Servers Template, so that only Server 3 is allowed to edit
 * In Edit Server, add allowEdit property
 * But when Edit is clicked, the query param disappears
+
+### Configuring the Handling of Query Parameters
+
+* While navigating from Server Component to Edit Server Component, in order to not lose the query param info, we need to pass queryParamsHandling property in the 2nd argument's object
+  * Values can be 'merge' or 'preserve'. merge is for merging the old as well as the current query params and preserve is for preserving the old query params(this will overwrite current query params if any)
