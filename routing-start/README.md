@@ -125,3 +125,9 @@ const id = +this.route.snapshot.params['id'];
 
 * While navigating from Server Component to Edit Server Component, in order to not lose the query param info, we need to pass queryParamsHandling property in the 2nd argument's object
   * Values can be 'merge' or 'preserve'. merge is for merging the old as well as the current query params and preserve is for preserving the old query params(this will overwrite current query params if any)
+
+### Redirecting and Wildcard Routes
+
+* In app.module.ts, in the appRoutes, we can also have redirectTo to redirect something
+* '**' is for catch all and must be present at the end
+* Implemented in newly created component of page-not-found(ng g c page-not-found --skip-tests true)
