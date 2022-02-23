@@ -190,3 +190,11 @@ Now, you only get redirected, if the full path is ''  (so only if you got NO oth
 * EditServer Component should implement CanComponentDeactivate interface
 * Check edit-server component and can-deactivate-guard.service.ts
 * This is useful for preventing accidentally navigating away
+
+### Passing Static Data to a Route
+
+* To pass static data to a Route, like for example ErrorComponent which renders errorMessage(provided externally from ActivatedRoute), we can provide data object containing the key value pairs in the Route of appRoutes
+* Then in ErrorComponent, inject ActivatedRoute and subscribe and get the value
+```sh
+ng g c error --skip-tests true
+```
