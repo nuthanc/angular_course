@@ -168,3 +168,7 @@ cd basics
 ## Attaching routing-start
 
 * Check its README
+
+## Course Project - Routing
+
+* Copied services-course and renamed to routing-course
