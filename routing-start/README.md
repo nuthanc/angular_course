@@ -208,3 +208,10 @@ ng g c error --skip-tests true
 * In the Component, you can access it in the ActivatedRoute's data property
   * We are subscribing here because the Server can change while we are on the same Route
 * This is important for loading Asynchronous data
+
+### Understanding Location Strategies
+
+* In real life application when we are Hosting this, we won't have Angular Development Server and the real Server(Backend which hosts your application) will parse the routes and if doesn't find and throws a 404 error, we need to inform it to return index.html(By default, this is not the behavior )
+  * Something like this, https://github.com/nuthanc/node_react_server/blob/master/index.js#L34-L40
+* If you can't get this to work or if it's a Old Browser, we can use useHash as true in appRouting's RouterModule's forRoot
+* This will add # and the server will ignore everything after the #, so that it uses index.html
