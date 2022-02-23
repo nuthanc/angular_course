@@ -198,3 +198,13 @@ Now, you only get redirected, if the full path is ''  (so only if you got NO oth
 ```sh
 ng g c error --skip-tests true
 ```
+
+### Resolving Dynamic Data with the resolve Guard
+
+* Resolve Interface is different than CanActivate because unlike CanActivate, Resolve will always render the Component for the Route but it does some processing(Maybe Asynchronous operation) before Loading the Component
+* resolve will run each time it renders the Route, so only snapshot is sufficient and subscribing is not required
+* Changes in Server Component, AppRouting module, App module, ServerResolver service
+* In AppRouting, in the route add resolve property which is an object with the key you use in the Component and the value is the Resolver service
+* In the Component, you can access it in the ActivatedRoute's data property
+  * We are subscribing here because the Server can change while we are on the same Route
+* This is important for loading Asynchronous data
