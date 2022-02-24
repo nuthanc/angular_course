@@ -30,3 +30,8 @@ ng g m app-routing --flat --module=app
 
 * Author had to add style:"cursor: pointer;" to get that hand pointer but for me it was already there
   * Maybe bootstrap does it for me
+
+### Child Routes Challenge
+
+* I had already implemented this in Setting Up Routes section itself
+  * But there I used recipe names, maybe now let's use the index

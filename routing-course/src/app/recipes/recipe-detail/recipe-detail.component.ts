@@ -12,21 +12,13 @@ import { RecipeService } from '../recipe.service';
 export class RecipeDetailComponent implements OnInit {
   @Input() recipe!: Recipe;
 
-  // My Implementation
-  // constructor(
-  //   private shoppingListService: ShoppingListService
-  // ) {}
-
-  // onAddToShoppingList(ingredients: Ingredient[]) {
-  //   for (let ingredient of ingredients) {
-  //     this.shoppingListService.addIngredient(ingredient); // Lot of events are emitted from this
-  //   }
-  // }
   constructor(private recipeService: RecipeService, private route: ActivatedRoute) {}
   ngOnInit(): void {
     this.route.params.subscribe(
       (params: Params) => {
-        this.recipe = this.recipeService.getRecipes().filter((recipe) => recipe.name === params['name'])[0];
+        // this.recipe = this.recipeService.getRecipes().filter((recipe) => recipe.name === params['name'])[0];
+        const index = params['index'];
+        this.recipe = this.recipeService.getRecipes()[index];
       }
     )
   }
