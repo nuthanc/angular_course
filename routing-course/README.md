@@ -52,3 +52,7 @@ ng g c recipes/recipe-start --skip-tests true
 
 * Change in recipe-item(I had already done in Setting Up Routes)
 * Author used relative path, whereas I used absolute path
+
+### Styling Active Recipe Items
+
+* Just add routerActiveLink="active" in recipe item's template
