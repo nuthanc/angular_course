@@ -56,3 +56,15 @@ ng g c recipes/recipe-start --skip-tests true
 ### Styling Active Recipe Items
 
 * Just add routerActiveLink="active" in recipe item's template
+
+### Adding Editing Routes
+
+```sh
+ng g c recipes/recipe-edit --skip-tests true
+```
+* Register new route for the above edit component
+* We'll get the below error if new route is before id in recipes children routes
+```
+TypeError: Cannot read properties of undefined (reading 'name')
+```
+* So we need to switch the order
