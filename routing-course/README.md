@@ -25,3 +25,8 @@ ng g m app-routing --flat --module=app
 ### Marking Active Routes
 
 * Add routerLinkActive to both the li in header component's template
+
+### Fixing Page Reload Issues
+
+* Author had to add style:"cursor: pointer;" to get that hand pointer but for me it was already there
+  * Maybe bootstrap does it for me
