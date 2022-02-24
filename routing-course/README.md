@@ -78,3 +78,8 @@ TypeError: Cannot read properties of undefined (reading 'name')
 ### Programmatic Navigation to the Edit Page
 
 * I had used routerLink to navigate but Author used Programmatic navigation
+
+### One Note about Route Observables
+
+* Angular will do the cleanup work for Parmas Observables we set up in Recipe Edit and Detail components
+* But remember to clean up for our own Observables
