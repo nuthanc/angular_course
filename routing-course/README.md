@@ -47,3 +47,8 @@ ng g c recipes/recipe-start --skip-tests true
 
 * I had already implemented this in Setting Up Routes section itself
 * Author used 'id' as property in recipe detail and added a method to get a recipe by index in recipe service
+
+### Passing Dynamic Parameters to Links
+
+* Change in recipe-item(I had already done in Setting Up Routes)
+* Author used relative path, whereas I used absolute path
