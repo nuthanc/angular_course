@@ -68,3 +68,9 @@ ng g c recipes/recipe-edit --skip-tests true
 TypeError: Cannot read properties of undefined (reading 'name')
 ```
 * So we need to switch the order
+
+### Retrieving Route Parameters
+
+* Changes in recipe-edit component
+* Add id and editMode properties in RecipeEdit and subscribe to param changes in ngOnInit to initialize id and reassign editMode
+* Also change links in New and Edit Recipe
