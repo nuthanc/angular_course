@@ -42,3 +42,8 @@ ng g m app-routing --flat --module=app
 ```sh
 ng g c recipes/recipe-start --skip-tests true
 ```
+
+### Configuring Route Parameters
+
+* I had already implemented this in Setting Up Routes section itself
+* Author used 'id' as property in recipe detail and added a method to get a recipe by index in recipe service
