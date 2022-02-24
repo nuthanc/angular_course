@@ -35,3 +35,10 @@ ng g m app-routing --flat --module=app
 
 * I had already implemented this in Setting Up Routes section itself
   * But there I used recipe names, maybe now let's use the index
+
+### Adding Child Routing Together
+
+* Add route for recipe-start in app routing
+```sh
+ng g c recipes/recipe-start --skip-tests true
+```
