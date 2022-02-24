@@ -21,3 +21,7 @@ ng g m app-routing --flat --module=app
 ### Adding Navigation to the App
 
 * I had changed header template in last lecture itself(routerLink), now just need to remove those methods in Header Component
+
+### Marking Active Routes
+
+* Add routerLinkActive to both the li in header component's template
