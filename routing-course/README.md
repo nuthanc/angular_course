@@ -74,3 +74,7 @@ TypeError: Cannot read properties of undefined (reading 'name')
 * Changes in recipe-edit component
 * Add id and editMode properties in RecipeEdit and subscribe to param changes in ngOnInit to initialize id and reassign editMode
 * Also change links in New and Edit Recipe
+
+### Programmatic Navigation to the Edit Page
+
+* I had used routerLink to navigate but Author used Programmatic navigation
