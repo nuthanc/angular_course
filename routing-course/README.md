@@ -17,3 +17,7 @@ ng g m app-routing --flat --module=app
 ```
 * Need to add imports and exports for RouterModule in app routing module
 * Use of router-outlet in app component's template
+
+### Adding Navigation to the App
+
+* I had changed header template in last lecture itself(routerLink), now just need to remove those methods in Header Component
