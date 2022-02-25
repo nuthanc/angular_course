@@ -185,3 +185,8 @@ cd basics
   * Data
   * Error
   * Completion
+
+### Analyzing Angular Observables
+
+* We have seen in routing section about server and recipe Components, where we subscribe to params when we are changing routes in the same Component
+* There params is the observable(as it is a stream emitting different route params) and we subscribe to it
