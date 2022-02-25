@@ -172,3 +172,16 @@ cd basics
 ## Course Project - Routing
 
 * Copied services-course and renamed to routing-course
+
+## Understanding Observables
+
+### Module Introduction
+
+![Observable](images/observable.png)
+* Observable can be thought of as a Data Source
+* Pattern involves Observable and an Observer and in between we have a stream or timeline
+* Observer is your code(like the subscribe)
+* 3 types of Data packages you could receive
+  * Data
+  * Error
+  * Completion
