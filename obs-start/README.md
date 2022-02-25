@@ -20,4 +20,13 @@
 * Observable.create is deprecated, use new Observable
 * observer is the part being interested about new data, errors or observable being completed
   * This is the listening part which we get as Argument
-  * next is for letting our Observer know that there is a new value
+  * next is a callback for letting our Observer know that there is a new value
+
+### Errors & Completion
+
+* Similar to next, we have error and complete callback for observer
+* And when we subscribe, we get data callback as 1st argument, error callback as 2nd argument and complete callback as 3rd argument
+* Throwing Error cancels the Observable and lets it die
+* Whenever an Observable is complete, it really is done and there is no other values emitted after
+* When an observer calls error or complete, there is no need to Unsubscribe as it is already dead, but there is no harm in unsubscribing
+* error is not same as complete,i.e complete callback doesn't get executed in subscribe if error is thrown before complete
