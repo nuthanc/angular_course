@@ -14,3 +14,10 @@
 * So we shouldn't forget to unsubscribe in ngOnDestroy
 * There are some observables like http which emit a value only once and they are done
 * Angular provided Observables are destroyed automatically by Angular
+
+### Building a Custom Observable
+
+* Observable.create is deprecated, use new Observable
+* observer is the part being interested about new data, errors or observable being completed
+  * This is the listening part which we get as Argument
+  * next is for letting our Observer know that there is a new value
