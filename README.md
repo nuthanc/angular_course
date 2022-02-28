@@ -211,3 +211,10 @@ cd basics
   valid: true
 }
 ```
+
+### Template-Driven (TD) vs Reactive Approach
+
+* Template-Driven
+  * Angular infers the Form Object from the DOM
+* Reactive Approach
+  * Form is created programmatically and synchronized with DOM
