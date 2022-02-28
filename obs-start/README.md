@@ -60,3 +60,15 @@ ng g s user --skip-tests true
 * Use of Subjects is the recommended way instead of EventEmitter for Cross component communication
 * When using @Output, use Angular's EventEmitter
 * Also we need to unsubscribe in ngOnDestroy
+
+### Useful Resources
+
+```txt
+Useful Resources:
+
+Official Docs: https://rxjs-dev.firebaseapp.com/
+
+RxJS Series: https://academind.com/learn/javascript/understanding-rxjs/
+
+Updating to RxJS 6: https://academind.com/learn/javascript/rxjs-6-what-changed/
+```
