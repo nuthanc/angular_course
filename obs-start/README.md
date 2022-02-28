@@ -36,3 +36,10 @@
 * We don't usually write Observables, we will just subscribe and use it from 3rd party libraries
 * But usually, an Observable wraps an Event source(AJAX request, Click listener, etc) and emits data, error or completion event
 * We basically subscribe and get that data or errors
+
+### Understanding Operators
+
+* Before subscribing, we can modify the data from the Observables using Operators
+* Operators are attached to Observables using pipe method(from rxjs) and you can provide any number of operators in pipe
+* Operators come from rxjs/operators
+* Then we attach subscribe to the pipe
