@@ -1,5 +1,9 @@
 # Angular
 
+### Resource
+
+* https://academind.com/tutorials/
+
 ### What is Angular?
 
 * JS Framework which allows you to create reactive SPAs

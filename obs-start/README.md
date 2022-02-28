@@ -43,3 +43,20 @@
 * Operators are attached to Observables using pipe method(from rxjs) and you can provide any number of operators in pipe
 * Operators come from rxjs/operators
 * Then we attach subscribe to the pipe
+* https://academind.com/tutorials/understanding-rxjs
+
+### Subjects
+
+* Subjects can be used instead of EventEmitters for Cross Component communication
+* We use next method for Subjects
+* Let's check of a usecase when clicked on Activate in User component, a certain text is printed in the App Component
+* For this, we generally use Services and EventEmitter
+```sh
+ng g s user --skip-tests true
+```
+* A better approach is to use Subjects
+* Observables are generally Passive as we wrap callback, event
+* Subjects are Active(actively need to be triggered from us) because we can call 'next' from outside
+* Use of Subjects is the recommended way instead of EventEmitter for Cross component communication
+* When using @Output, use Angular's EventEmitter
+* Also we need to unsubscribe in ngOnDestroy
