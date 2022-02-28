@@ -195,3 +195,19 @@ cd basics
 ## Course Project - Observables
 
 * Copied routing-course and renamed to obs-course
+
+## Handling Forms in Angular Apps
+
+### Why Do we need Angular's Help
+
+* Angular creates a JS object to represent the form values
+* Something like
+```js
+{
+  value: {
+    name: 'Max',
+    email: 'test@test.com'
+  }
+  valid: true
+}
+```
