@@ -191,3 +191,7 @@ cd basics
   * Completion
 
 ## Attaching obs-start
+
+## Course Project - Observables
+
+* Copied routing-course and renamed to obs-course
