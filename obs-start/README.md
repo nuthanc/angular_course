@@ -30,3 +30,9 @@
 * Whenever an Observable is complete, it really is done and there is no other values emitted after
 * When an observer calls error or complete, there is no need to Unsubscribe as it is already dead, but there is no harm in unsubscribing
 * error is not same as complete,i.e complete callback doesn't get executed in subscribe if error is thrown before complete
+
+### Observables & You!
+
+* We don't usually write Observables, we will just subscribe and use it from 3rd party libraries
+* But usually, an Observable wraps an Event source(AJAX request, Click listener, etc) and emits data, error or completion event
+* We basically subscribe and get that data or errors
