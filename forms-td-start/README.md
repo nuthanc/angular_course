@@ -36,3 +36,11 @@
 * Since we are placing a Local reference on the form, we can also access it via ViewChild
 * It's not ElementRef now but ngForm object because the Local Reference is assigned ngForm value
 * This is helpful when we want to access the form values even before we submit
+
+### TD Adding Validation to check User Input
+
+* We can add 'required' html attribute to input elements. This also lets Angular know about it(based on selector for a directive) and configures the form(valid or invalid) 
+* For email, we can add required and email(directive) to the input
+* Based on this, we can check the valid property of ngForm for validity
+* valid property is also available per control(name added to elements) level
+* Angular also adds ng-classes like ng-dirty, ng-touched, ng-valid dynamically based on the Actions and Inputs
