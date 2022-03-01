@@ -42,7 +42,7 @@
 * We can add 'required' html attribute to input elements. This also lets Angular know about it(based on selector for a directive) and configures the form(valid or invalid) 
 * For email, we can add required and email(directive) to the input
 * Based on this, we can check the valid property of ngForm for validity
-* valid property is also available per control(name added to elements) level
+* valid property is also available per control(name and ngModel added to elements) level
 * Angular also adds ng-classes like ng-dirty, ng-touched, ng-valid dynamically based on the Actions and Inputs
 
 ### Built-in Validators & Using HTML5 Validation
@@ -61,3 +61,9 @@ Additionally, you might also want to enable HTML5 validation (by default, Angula
 
 * For the submit button, we can disabled property binding and use Local Reference f's invalid property or valid
 * Then in css, we can add styles to inputs with ng-invalid and ng-touched classes
+
+### TD Outputting Validation Error Messages
+
+* For getting access to the individual controls, we can add a Local Reference and assign ngModel
+  * This is similar to what we did to form(Form Directive of Angular does this)
+  * ngModel exposes some additional info about the control it creates by accessing ngModel
