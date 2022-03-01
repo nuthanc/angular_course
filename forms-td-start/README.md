@@ -80,3 +80,11 @@ Additionally, you might also want to enable HTML5 validation (by default, Angula
   * With no binding: Registering Input as control
   * One way binding: Default values to control
   * Two way binding: Output or Do anything with the value
+
+### TD Grouping Form Controls
+
+* If we want to group username and email which are in user-data div, we can add ngModelGroup property binding to the div to group them to say userData
+* The ngForm's value will have userData object and that would contain username and email
+* Similary the ngForm's controls would have userData key along with valid, invalid and other properties
+* Also the div would have the ng-classes like ng-dirty, ng-touched and ng-valid
+* Also we can use LocalReference to assign ngModelGroup and validate within the form
