@@ -72,3 +72,11 @@ Additionally, you might also want to enable HTML5 validation (by default, Angula
 
 * For providing default values, we can add Property Binding to ngModel and provide a value
 * This will add value to the control in the background by Angular
+
+### TD Using ngModel with Two-Way-Binding
+
+* For instantly reacting to any changes, we can add 2 way Binding to ngModel
+* So with ngModel
+  * With no binding: Registering Input as control
+  * One way binding: Default values to control
+  * Two way binding: Output or Do anything with the value
