@@ -88,3 +88,7 @@ Additionally, you might also want to enable HTML5 validation (by default, Angula
 * Similary the ngForm's controls would have userData key along with valid, invalid and other properties
 * Also the div would have the ng-classes like ng-dirty, ng-touched and ng-valid
 * Also we can use LocalReference to assign ngModelGroup and validate within the form
+
+### TD Handling Radio Buttons
+
+* Add genders in App Component and render it in Template
