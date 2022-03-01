@@ -23,3 +23,10 @@
   * ngSubmit gives us only one Event we can listen to
 * Place Localreference on the Form element and set it to ngForm
   * form element is kind of a selector for a directive built into Angular which will create this js object(ngForm) automatically and it will expose some data so that we can fetch on the form element
+
+### TD Understanding Form State
+
+* We can console log the form of type NgForm and check its properties
+* dirty: If we changed something
+* touched: If we touched something
+* And a whole lot of other properties
