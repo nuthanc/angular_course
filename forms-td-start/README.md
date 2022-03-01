@@ -30,3 +30,9 @@
 * dirty: If we changed something
 * touched: If we touched something
 * And a whole lot of other properties
+
+### TD Accessing the Form with @ViewChild
+
+* Since we are placing a Local reference on the form, we can also access it via ViewChild
+* It's not ElementRef now but ngForm object because the Local Reference is assigned ngForm value
+* This is helpful when we want to access the form values even before we submit
