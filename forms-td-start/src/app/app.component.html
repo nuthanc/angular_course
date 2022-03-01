@@ -31,12 +31,19 @@
               #email="ngModel"
             />
             <!-- <span class="help-block" *ngIf="email.invalid && email.touched">Provide valid Email</span> -->
-            <span class="help-block" *ngIf="!email.valid && email.touched">Provide valid Email</span>
+            <span class="help-block" *ngIf="!email.valid && email.touched"
+              >Provide valid Email</span
+            >
           </div>
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
-          <select id="secret" class="form-control" ngModel name="secret">
+          <select
+            id="secret"
+            class="form-control"
+            [ngModel]="defaultQuestion"
+            name="secret"
+          >
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>

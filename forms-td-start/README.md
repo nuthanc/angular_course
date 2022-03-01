@@ -67,3 +67,8 @@ Additionally, you might also want to enable HTML5 validation (by default, Angula
 * For getting access to the individual controls, we can add a Local Reference and assign ngModel
   * This is similar to what we did to form(Form Directive of Angular does this)
   * ngModel exposes some additional info about the control it creates by accessing ngModel
+
+### TD Set Default Values with ngModel Property Binding
+
+* For providing default values, we can add Property Binding to ngModel and provide a value
+* This will add value to the control in the background by Angular
