@@ -56,3 +56,8 @@ For the template-driven approach, you need the directives. You can find out thei
 
 Additionally, you might also want to enable HTML5 validation (by default, Angular disables it). You can do so by adding the ngNativeValidate  to a control in your template.
 ```
+
+### TD Using the Form State
+
+* For the submit button, we can disabled property binding and use Local Reference f's invalid property or valid
+* Then in css, we can add styles to inputs with ng-invalid and ng-touched classes
