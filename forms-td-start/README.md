@@ -106,3 +106,8 @@ Additionally, you might also want to enable HTML5 validation (by default, Angula
 
 * This section is for displaying the submitted data
 * Check app template and typescript file
+
+### TD Resetting Forms
+
+* With ViewChild's signupForm, we can use reset() to empty all the values
+* Or if you want, you can pass the same object as in setValue() to reset() which will then reset the form to specific values
