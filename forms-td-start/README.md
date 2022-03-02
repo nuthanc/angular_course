@@ -92,3 +92,12 @@ Additionally, you might also want to enable HTML5 validation (by default, Angula
 ### TD Handling Radio Buttons
 
 * Add genders in App Component and render it in Template
+
+### TD Setting and Patching Form Values
+
+* Right now, Suggest an Username button doesn't work
+* Now to put some value in the form, we can use ViewChild's signupForm to setValue 
+* But with this approach if there was any value before, it overrides it
+* Better approach is it use signupForm.form.patchValue
+  * form is FormGroup wrapped within NgForm
+* setValue is for overriding(setting) the whole form and patchValue for updating parts of the form
