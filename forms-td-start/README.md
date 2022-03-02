@@ -101,3 +101,8 @@ Additionally, you might also want to enable HTML5 validation (by default, Angula
 * Better approach is it use signupForm.form.patchValue
   * form is FormGroup wrapped within NgForm
 * setValue is for overriding(setting) the whole form and patchValue for updating parts of the form
+
+### TD Using Form Data
+
+* This section is for displaying the submitted data
+* Check app template and typescript file
