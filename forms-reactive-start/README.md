@@ -39,3 +39,9 @@
   * get takes control name or path to the control
   * path will be the name if there is only 1 level of nesting
 * We can add css styles as before
+
+### Reactive Grouping Controls
+
+* To Group, we create another FormGroup in the overall FormGroup and create te objects containing the control
+* Similarly, we need to sync in html by structuring(nesting) appropriately and adding formGroupName(value should be same as in TS code) to the div containing the Controls
+* For the nested controls, we need to provide the path appropriately in the get method
