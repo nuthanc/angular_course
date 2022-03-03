@@ -75,3 +75,13 @@ and then in the template:
 
 This adjustment is required due to the way TS works and Angular parses your templates (it doesn't understand TS there).
 ```
+
+### Reactive Array of Form Controls
+
+* For dynamically adding Controls of the same type, we use FormArray
+  * FormArray takes an array of FormControls
+* To sync in html, we need formArrayName which takes a string(name should be same as given in Component)
+* On adding new hobbies, we need to cast it to FormArray to push, otherwise we'll get an error
+* Also, we can't loop through hobbies controls in template, we need to do it in TS code
+  * Angular doesn't understand TS there
+* We can use a getter or normal method to get the controls
