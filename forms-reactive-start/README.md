@@ -24,3 +24,11 @@
 
 * Just like Template Driven approach, for submission we are gonna utilize the ngSubmit directive to call our method
 * In the method, we can just use the FormGroup property created before
+
+### Reactive Adding Validation
+
+* In TD approach, we added required property to the inputs
+* But here since we are syncing our form from TS to template, it doesn't work anymore
+* Now, we need to add Validators as the 2nd argument while creating the FormControl
+  * We need to put only the reference and not call it
+* You can inspect the input classes to check this Validation
