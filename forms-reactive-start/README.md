@@ -14,8 +14,13 @@
 
 ### Reactive Syncing HTML and Form
 
-* We are using formGroup directive to override Angular's default behaviour of inferring the form
+* We are using formGroup directive to override Angular's default behaviour of inferring the form(Autocreating the form)
 * To sync our form and html, we need to use property binding of [formGroup]="signupForm" to form
   * Note: signupForm is the FormGroup created in TS code
 * But along with this, we need bind the inputs as well with formControlName and the value must be the key used in FormGroup object in TS code
 * After doing this, we can see Angular classes attached to the inputs
+
+### Reactive Submitting the Form
+
+* Just like Template Driven approach, for submission we are gonna utilize the ngSubmit directive to call our method
+* In the method, we can just use the FormGroup property created before
