@@ -45,3 +45,33 @@
 * To Group, we create another FormGroup in the overall FormGroup and create te objects containing the control
 * Similarly, we need to sync in html by structuring(nesting) appropriately and adding formGroupName(value should be same as in TS code) to the div containing the Controls
 * For the nested controls, we need to provide the path appropriately in the get method
+
+### Fixing a Bug
+
+```txt
+In the next lecture, we'll add some code to access the controls of our form array:
+
+*ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index"
+
+This code will fail as of the latest Angular version.
+
+You can fix it easily though. Outsource the "get the controls" logic into a method of your component code (the .ts file):
+
+getControls() {
+  return (<FormArray>this.signupForm.get('hobbies')).controls;
+}
+In the template, you can then use:
+
+*ngFor="let hobbyControl of getControls(); let i = index"
+
+Alternatively, you can set up a getter and use an alternative type casting syntax:
+
+get controls() {
+  return (this.signupForm.get('hobbies') as FormArray).controls;
+}
+and then in the template:
+
+*ngFor="let hobbyControl of controls; let i = index"
+
+This adjustment is required due to the way TS works and Angular parses your templates (it doesn't understand TS there).
+```
