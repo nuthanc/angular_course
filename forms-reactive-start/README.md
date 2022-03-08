@@ -95,3 +95,7 @@ This adjustment is required due to the way TS works and Angular parses your temp
 * Also, we need to bind the value of 'this' to this method because Angular is responsible for calling this method and not the Component
   * Otherwise, this.forbiddenUsernames would be undefined
   * Alternative is use to use Arrow function
+
+### Reactive Using Error Codes
+
+* We can check the error codes in the individual Control's errors key
