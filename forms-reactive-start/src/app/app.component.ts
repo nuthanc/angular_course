@@ -20,18 +20,36 @@ export class AppComponent implements OnInit {
           Validators.required,
           this.forbiddenNames.bind(this),
         ]),
-        email: new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmail),
+        email: new FormControl(
+          null,
+          [Validators.required, Validators.email],
+          this.forbiddenEmail
+        ),
       }),
       gender: new FormControl('male'),
       hobbies: new FormArray([]),
     });
 
     // this.signupForm.valueChanges.subscribe(value => console.log(value));
-    this.signupForm.statusChanges.subscribe(status => console.log(status)); 
+    this.signupForm.statusChanges.subscribe((status) => console.log(status));
+    this.signupForm.setValue({
+      'userData': {
+        'username': 'Nuthan',
+        'email': 'nuthanchandra@gmail.com',
+      },
+      'gender': 'male',
+      'hobbies': [],
+    });
+    this.signupForm.patchValue({
+      'userData': {
+        'username': 'Max',
+      },
+    });
   }
 
   onSubmit() {
     console.log(this.signupForm);
+    this.signupForm.reset({ gender: 'female' });
   }
 
   onAddHobby() {

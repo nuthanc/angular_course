@@ -113,3 +113,8 @@ This adjustment is required due to the way TS works and Angular parses your temp
 
 * We have Observables for status and value changes both in the overall form and the individual controls to which we can subscribe
 * The properties are 'valueChanges' and 'statusChanges'
+
+### Reactive Setting and Patching Values
+
+* Just like TD approach, we have setValue and patchValue by which we can set and patch the values of the form
+* Similary, there is reset
