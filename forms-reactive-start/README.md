@@ -108,3 +108,8 @@ This adjustment is required due to the way TS works and Angular parses your temp
 * To simulate async request within this validator, we are using setTimeout
 * We see in Inspect after checking for non-empty and valid email(FormControl's 2nd argument), we check if it's value is test@test.com
   * Initially it will be in ng-pending after non-empty and valid email and then it will check for the async validator and change to ng-valid or ng-invalid
+
+### Reactive Reacting to Status or Value Changes
+
+* We have Observables for status and value changes both in the overall form and the individual controls to which we can subscribe
+* The properties are 'valueChanges' and 'statusChanges'
