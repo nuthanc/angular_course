@@ -99,3 +99,12 @@ This adjustment is required due to the way TS works and Angular parses your temp
 ### Reactive Using Error Codes
 
 * We can check the error codes in the individual Control's errors key
+
+### Reactive Creating a Custom Async Validator
+
+* There might be Validators which need to reach out to server to validate(Async operations)
+* For this, we need Async Validators passed to the Control as the 3rd argument
+* The Async Validator method needs to return a Promise or an Observable
+* To simulate async request within this validator, we are using setTimeout
+* We see in Inspect after checking for non-empty and valid email(FormControl's 2nd argument), we check if it's value is test@test.com
+  * Initially it will be in ng-pending after non-empty and valid email and then it will check for the async validator and change to ng-valid or ng-invalid
