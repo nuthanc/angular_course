@@ -85,3 +85,13 @@ This adjustment is required due to the way TS works and Angular parses your temp
 * Also, we can't loop through hobbies controls in template, we need to do it in TS code
   * Angular doesn't understand TS there
 * We can use a getter or normal method to get the controls
+
+### Reactive Creating Custom Validators
+
+* We can add Custom Validators to our controls
+* The Validator is a method which takes FormControl as Argument and returns an object whose key is the error and value is a boolean
+  * If validation is successful, we need to return null or no return statement
+* We need to add this method to the list of validators in Form Control
+* Also, we need to bind the value of 'this' to this method because Angular is responsible for calling this method and not the Component
+  * Otherwise, this.forbiddenUsernames would be undefined
+  * Alternative is use to use Arrow function
