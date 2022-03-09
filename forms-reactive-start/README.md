@@ -118,3 +118,9 @@ This adjustment is required due to the way TS works and Angular parses your temp
 
 * Just like TD approach, we have setValue and patchValue by which we can set and patch the values of the form
 * Similary, there is reset
+
+### Reactive Forms Assignment
+
+* Check App Component's html
+* Author used separate file for validators
+* static methods because we can use it without instantiating

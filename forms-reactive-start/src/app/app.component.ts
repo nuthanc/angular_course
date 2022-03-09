@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { CustomValidators } from './custom-validators';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ export class AppComponent implements OnInit {
   genders = ['male', 'female'];
   signupForm: FormGroup;
   forbiddenUsernames = ['Anna', 'Chris'];
+
+  projectForm: FormGroup;
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
@@ -33,23 +36,46 @@ export class AppComponent implements OnInit {
     // this.signupForm.valueChanges.subscribe(value => console.log(value));
     this.signupForm.statusChanges.subscribe((status) => console.log(status));
     this.signupForm.setValue({
-      'userData': {
-        'username': 'Nuthan',
-        'email': 'nuthanchandra@gmail.com',
+      userData: {
+        username: 'Nuthan',
+        email: 'nuthanchandra@gmail.com',
       },
-      'gender': 'male',
-      'hobbies': [],
+      gender: 'male',
+      hobbies: [],
     });
     this.signupForm.patchValue({
-      'userData': {
-        'username': 'Max',
+      userData: {
+        username: 'Max',
       },
+    });
+
+    this.projectForm = new FormGroup({
+      // projectName: new FormControl(null, [
+      //   Validators.required,
+      //   this.forbiddenProjectName,
+      // ]),
+      // projectName: new FormControl(
+      //   null,
+      //   [Validators.required],
+      //   this.forbiddenProjectNameAsync
+      // ),
+      projectName: new FormControl(
+        null,
+        [Validators.required, CustomValidators.invalidProjectName],
+        CustomValidators.asyncInvalidProjectName
+      ),
+      mail: new FormControl(null, [Validators.required, Validators.email]),
+      projectStatus: new FormControl('critical'),
     });
   }
 
   onSubmit() {
     console.log(this.signupForm);
     this.signupForm.reset({ gender: 'female' });
+  }
+
+  onSaveProject() {
+    console.log(this.projectForm.value);
   }
 
   onAddHobby() {
@@ -74,11 +100,33 @@ export class AppComponent implements OnInit {
     const promise = new Promise<any>((resolve, reject) => {
       setTimeout(() => {
         if (control.value === 'test@test.com') {
-          resolve({ emailIsForbidden: true });
+          resolve({ 'emailIsForbidden': true });
         } else {
           resolve(null);
         }
       }, 1500);
+    });
+    return promise;
+  }
+
+  forbiddenProjectName = (control: FormControl): { [s: string]: boolean } => {
+    if (control.value === 'Test') {
+      return { 'invalidProjectName': true };
+    }
+    return null;
+  };
+
+  forbiddenProjectNameAsync(
+    control: FormControl
+  ): Promise<any> | Observable<any> {
+    const promise = new Promise<any>((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'Test') {
+          resolve({ 'invalidProjectName': true });
+        } else {
+          resolve(null);
+        }
+      }, 1000);
     });
     return promise;
   }
