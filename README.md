@@ -222,3 +222,7 @@ cd basics
 ### Attaching forms-td-start
 
 ### Attaching forms-reactive-start
+
+## Course Project - Forms
+
+* Copied obs-course and renamed to forms-course
