@@ -28,3 +28,8 @@
 
 * Create getIngredient method in Shopping List service so that you can use that within the subscribe method of Shopping Edit Component
 * Then use ViewChild to get access of the form and set the name and amount
+
+### Updating existing Items
+
+* Based on editMode, we need to use Add/Edit in the button 
+* Add editIngredient in service and call it in onAddItem
