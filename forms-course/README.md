@@ -56,3 +56,9 @@
 
 * Create recipeForm of type FormGroup in Recipe Edit Component
 * Initialize the form whenever route params change
+
+### Syncing HTML with the Form
+
+* Ensure ReactiveFormsModule is added in imports of AppModule else synchronization with form fails
+* Add and assign formGroup and formControlName to the form and inputs respectively
+* Use ngSubmit for submission
