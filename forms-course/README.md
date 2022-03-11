@@ -42,3 +42,8 @@
 ### Allowing the the User to Clear (Cancel) the Form
 
 * Add click listener to Clear button and reset the form and set editMode to false
+
+### Allowing the Deletion of Shopping List Items
+
+* Show Delete button only if it in editMode
+* Add deleteIngredient method in the service and clear the form
