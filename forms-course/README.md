@@ -96,3 +96,9 @@ This adjustment is required due to the way TS works and Angular parses your temp
 * Place button to add ingredient and add a click listener
   * Make the type as button or it will submit the form as it is at the end
 * Then in onAddIngredient push the FormGroup to the FormArray
+
+### Validating User Input
+
+* Add Validators in FormControl
+* Disable the Save button if the form is invalid
+* Mark invalid inputs with red border in css
