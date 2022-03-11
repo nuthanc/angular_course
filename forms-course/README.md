@@ -133,3 +133,14 @@ This adjustment is required due to the way TS works and Angular parses your temp
 
 * Call onDeleteIngredient to the click listener of X and remove it from the ingredients FormArray
 * Also we forgot to unsubscribe in recipe-list component
+
+### Deleting all Items in a FormArray
+
+```txt
+As of Angular 8+, there's a new way of clearing all items in a FormArray.
+
+(<FormArray>this.recipeForm.get('ingredients')).clear();
+The clear() method automatically loops through all registered FormControls (or FormGroups) in the FormArray and removes them.
+
+It's like manually creating a loop and calling removeAt() for every item.
+```
