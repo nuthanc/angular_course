@@ -83,3 +83,10 @@ In the template, you can then use:
 
 This adjustment is required due to the way TS works and Angular parses your templates (it doesn't understand TS there).
 ```
+
+### Adding Ingredient Controls to a Form Array
+
+* We need to create FormArray for ingredients
+* And while pushing the ingredients we need to create FormGroup as there are name and amount
+* In template, we need to add formArrayName, formGroupName and formControlName
+* We need to use recipeIngredientControls getter as Angular cannot understand TS
