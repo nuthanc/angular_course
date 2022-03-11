@@ -90,3 +90,9 @@ This adjustment is required due to the way TS works and Angular parses your temp
 * And while pushing the ingredients we need to create FormGroup as there are name and amount
 * In template, we need to add formArrayName, formGroupName and formControlName
 * We need to use recipeIngredientControls getter as Angular cannot understand TS
+
+### Adding new Ingredient Controls
+
+* Place button to add ingredient and add a click listener
+  * Make the type as button or it will submit the form as it is at the end
+* Then in onAddIngredient push the FormGroup to the FormArray
