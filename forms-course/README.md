@@ -128,3 +128,8 @@ This adjustment is required due to the way TS works and Angular parses your temp
 * After adding Recipe and when we navigate to ShoppingList and come back to Recipes, the added Recipes vanish
 * This is because the instance of RecipeService is destroyed when we go to Shopping List because the RecipeService is provided in RecipesComponent
 * To fix this, we can move it to AppModule
+
+### Deleting Ingredients and Some Finishing Touches
+
+* Call onDeleteIngredient to the click listener of X and remove it from the ingredients FormArray
+* Also we forgot to unsubscribe in recipe-list component
