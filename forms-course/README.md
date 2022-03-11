@@ -109,3 +109,8 @@ This adjustment is required due to the way TS works and Angular parses your temp
 * Call the above based on editMode
 * In addRecipe and updateRecipe, after making the change, we need emit a Subject and subscribe to it in Recipe List
 * Because in getRecipes, we are using slicing so it is a different copy
+
+### Adding a Delete and Clear (Cancel) Functionality
+
+* Add deleteRecipe in RecipeService and call it in Recipe Detail on clicking the delete button
+* For cancel and submit, navigate one directory up using Router
