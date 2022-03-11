@@ -33,3 +33,8 @@
 
 * Based on editMode, we need to use Add/Edit in the button 
 * Add editIngredient in service and call it in onAddItem
+
+### Resetting the Form
+
+* Rename Submit operation in the form of shopping edit component
+* Set editMode to false and reset the form
