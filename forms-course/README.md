@@ -102,3 +102,10 @@ This adjustment is required due to the way TS works and Angular parses your temp
 * Add Validators in FormControl
 * Disable the Save button if the form is invalid
 * Mark invalid inputs with red border in css
+
+### Submitting the Recipe Edit Form
+
+* Add addRecipe and updateRecipe in RecipeService
+* Call the above based on editMode
+* In addRecipe and updateRecipe, after making the change, we need emit a Subject and subscribe to it in Recipe List
+* Because in getRecipes, we are using slicing so it is a different copy
