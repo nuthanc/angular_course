@@ -122,3 +122,9 @@ This adjustment is required due to the way TS works and Angular parses your temp
 ### Adding an Image Preview
 
 * Add local reference to imagePath and bind it to src 
+
+### Providing the Recipe Service Correctly
+
+* After adding Recipe and when we navigate to ShoppingList and come back to Recipes, the added Recipes vanish
+* This is because the instance of RecipeService is destroyed when we go to Shopping List because the RecipeService is provided in RecipesComponent
+* To fix this, we can move it to AppModule
