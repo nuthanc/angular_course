@@ -118,3 +118,7 @@ This adjustment is required due to the way TS works and Angular parses your temp
 ### Redirecting the User (after Deleting a Recipe)
 
 * Just navigate to /recipes after Deleting
+
+### Adding an Image Preview
+
+* Add local reference to imagePath and bind it to src 
