@@ -114,3 +114,7 @@ This adjustment is required due to the way TS works and Angular parses your temp
 
 * Add deleteRecipe in RecipeService and call it in Recipe Detail on clicking the delete button
 * For cancel and submit, navigate one directory up using Router
+
+### Redirecting the User (after Deleting a Recipe)
+
+* Just navigate to /recipes after Deleting
