@@ -47,3 +47,7 @@
 
 * Show Delete button only if it in editMode
 * Add deleteIngredient method in the service and clear the form
+
+### Creating the Template for the (Reactive) Recipe Edit Form
+
+* Populate the html in recipe-edit
