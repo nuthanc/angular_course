@@ -38,3 +38,7 @@
 
 * Rename Submit operation in the form of shopping edit component
 * Set editMode to false and reset the form
+
+### Allowing the the User to Clear (Cancel) the Form
+
+* Add click listener to Clear button and reset the form and set editMode to false
