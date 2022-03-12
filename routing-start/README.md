@@ -201,7 +201,7 @@ ng g c error --skip-tests true
 
 ### Resolving Dynamic Data with the resolve Guard
 
-* Resolve Interface is different than CanActivate because unlike CanActivate, Resolve will always render the Component for the Route but it does some processing(Maybe Asynchronous operation) before Loading the Component
+* Resolve Interface is different than CanActivate because unlike CanActivate, Resolve will always render the Component for the Route but it does some processing(**Maybe Asynchronous operation**) before Loading the Component
 * resolve will run each time it renders the Route, so only snapshot is sufficient and subscribing is not required
 * Changes in Server Component, AppRouting module, App module, ServerResolver service
 * In AppRouting, in the route add resolve property which is an object with the key you use in the Component and the value is the Resolver service
