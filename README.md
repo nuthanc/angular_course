@@ -226,3 +226,7 @@ cd basics
 ## Course Project - Forms
 
 * Copied obs-course and renamed to forms-course
+
+## My own NGRX implementation
+
+* Copied forms-course and renamed to my-ngrx-imp
