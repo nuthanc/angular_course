@@ -3,8 +3,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Recipe } from '../recipe.model';
 import * as fromApp from '../../store/app.reducer';
-import * as slActions from '../../shopping-list/store/shopping-list.action';
-import * as recipeActions from '../store/recipe.action';
+import * as ShoppingListActions from '../../shopping-list/store/shopping-list.action';
+import * as RecipesActions from '../store/recipe.action';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -38,7 +38,9 @@ export class RecipeDetailComponent implements OnInit {
   onAddToShoppingList() {
     // this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
     this.store.dispatch(
-      slActions.addIngredients({ ingredients: this.recipe.ingredients })
+      ShoppingListActions.addIngredients({
+        ingredients: this.recipe.ingredients,
+      })
     );
   }
 
@@ -48,7 +50,7 @@ export class RecipeDetailComponent implements OnInit {
 
   onDeleteRecipe() {
     // this.recipeService.deleteRecipe(this.id);
-    this.store.dispatch(recipeActions.deleteRecipe({ index: this.id }));
+    this.store.dispatch(RecipesActions.deleteRecipe({ index: this.id }));
     this.router.navigate(['/recipes']);
   }
 }

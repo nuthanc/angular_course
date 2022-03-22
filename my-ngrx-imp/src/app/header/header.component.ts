@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../store/app.reducer';
+import * as RecipesActions from '../recipes/store/recipe.action';
 
 @Component({
   selector: 'app-header',
@@ -10,14 +11,13 @@ import * as fromApp from '../store/app.reducer';
 export class HeaderComponent implements OnInit {
   constructor(private store: Store<fromApp.AppState>) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSave() {
-    
+    this.store.dispatch(RecipesActions.saveRecipes());
   }
 
   onFetch() {
-
+    this.store.dispatch(RecipesActions.fetchRecipes());
   }
 }

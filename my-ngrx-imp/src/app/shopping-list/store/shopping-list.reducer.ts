@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Ingredient } from 'src/app/shared/ingredient.model';
-import * as slActions from './shopping-list.action';
+import * as ShoppingListActions from './shopping-list.action';
 
 export interface State {
   ingredients: Ingredient[];
@@ -16,15 +16,15 @@ const initialState: State = {
 
 export const shoppingListReducer = createReducer(
   initialState,
-  on(slActions.addIngredient, (state, { ingredient }) => ({
+  on(ShoppingListActions.addIngredient, (state, { ingredient }) => ({
     ...state,
     ingredients: [...state.ingredients, ingredient],
   })),
-  on(slActions.addIngredients, (state, { ingredients }) => ({
+  on(ShoppingListActions.addIngredients, (state, { ingredients }) => ({
     ...state,
     ingredients: [...state.ingredients, ...ingredients],
   })),
-  on(slActions.updateIngredient, (state, action) => {
+  on(ShoppingListActions.updateIngredient, (state, action) => {
     const ingredients = state.ingredients.map((ingredient, index) =>
       index === state.editedItemIndex ? action.ingredient : ingredient
     );
@@ -35,7 +35,7 @@ export const shoppingListReducer = createReducer(
       ingredients: ingredients,
     };
   }),
-  on(slActions.deleteIngredient, (state) => {
+  on(ShoppingListActions.deleteIngredient, (state) => {
     const ingredients = state.ingredients.filter(
       (_, index) => index !== state.editedItemIndex
     );
@@ -46,7 +46,7 @@ export const shoppingListReducer = createReducer(
       ingredients: ingredients,
     };
   }),
-  on(slActions.startEditingIngredient, (state, action) => ({
+  on(ShoppingListActions.startEditingIngredient, (state, action) => ({
     ...state,
     editMode: true,
     editedItemIndex: action.index,

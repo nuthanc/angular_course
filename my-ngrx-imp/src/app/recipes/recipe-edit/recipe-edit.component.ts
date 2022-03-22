@@ -4,7 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 // import { RecipeService } from '../recipe.service';
 import * as fromApp from '../../store/app.reducer';
-import * as recipeActions from '../store/recipe.action';
+import * as RecipesActions from '../store/recipe.action';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -42,7 +42,7 @@ export class RecipeEditComponent implements OnInit {
     if (this.editMode) {
       // this.recipeService.updateRecipe(this.id, this.recipeForm.value);
       this.store.dispatch(
-        recipeActions.updateRecipe({
+        RecipesActions.updateRecipe({
           index: this.id,
           recipe: this.recipeForm.value,
         })
@@ -50,7 +50,7 @@ export class RecipeEditComponent implements OnInit {
     } else {
       // this.recipeService.addRecipe(this.recipeForm.value);
       this.store.dispatch(
-        recipeActions.addRecipe({ recipe: this.recipeForm.value })
+        RecipesActions.addRecipe({ recipe: this.recipeForm.value })
       );
     }
     this.onCancel();
