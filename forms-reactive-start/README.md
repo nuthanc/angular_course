@@ -35,7 +35,7 @@
 
 ### Reactive Getting Access to Controls
 
-* In TD approach, we used Local Reference but here we can use get method of signupForm(FormGroup) to aget access to the controls
+* In TD approach, we used Local Reference but here we can use get method of signupForm(FormGroup) to get access to the controls
   * get takes control name or path to the control
   * path will be the name if there is only 1 level of nesting
 * We can add css styles as before
