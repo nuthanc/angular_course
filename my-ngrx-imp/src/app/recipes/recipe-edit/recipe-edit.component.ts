@@ -4,7 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 // import { RecipeService } from '../recipe.service';
 import * as fromApp from '../../store/app.reducer';
-import * as RecipesActions from '../store/recipe.action';
+import * as RecipesActions from '../store/recipe.actions';
 import { map } from 'rxjs/operators';
 
 @Component({

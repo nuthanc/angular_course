@@ -3,8 +3,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Recipe } from '../recipe.model';
 import * as fromApp from '../../store/app.reducer';
-import * as ShoppingListActions from '../../shopping-list/store/shopping-list.action';
-import * as RecipesActions from '../store/recipe.action';
+import * as ShoppingListActions from '../../shopping-list/store/shopping-list.actions';
+import * as RecipesActions from '../store/recipe.actions';
 import { map } from 'rxjs/operators';
 
 @Component({

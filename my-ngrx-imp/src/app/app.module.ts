@@ -23,6 +23,7 @@ import { RecipeService } from './recipes/recipe.service';
 import { environment } from 'src/environments/environment';
 import * as fromApp from './store/app.reducer';
 import { RecipeEffects } from './recipes/store/recipe.effects';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { RecipeEffects } from './recipes/store/recipe.effects';
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

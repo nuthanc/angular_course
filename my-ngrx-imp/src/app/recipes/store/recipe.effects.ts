@@ -1,6 +1,6 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as fromApp from '../../store/app.reducer';
-import * as RecipesActions from './recipe.action';
+import * as RecipesActions from './recipe.actions';
 import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { withLatestFrom, switchMap, map } from 'rxjs/operators';

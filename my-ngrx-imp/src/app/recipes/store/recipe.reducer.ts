@@ -2,7 +2,7 @@ import { state } from '@angular/animations';
 import { Action, createReducer, on } from '@ngrx/store';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { Recipe } from '../recipe.model';
-import * as RecipesActions from './recipe.action';
+import * as RecipesActions from './recipe.actions';
 
 export interface State {
   recipes: Recipe[];

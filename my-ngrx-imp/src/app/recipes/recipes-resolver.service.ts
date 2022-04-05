@@ -8,7 +8,7 @@ import { Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { take, map, switchMap } from 'rxjs/operators';
 import * as fromApp from '../store/app.reducer';
-import * as RecipeActions from '../recipes/store/recipe.action';
+import * as RecipeActions from './store/recipe.actions';
 import { Recipe } from './recipe.model';
 import { Actions, ofType } from '@ngrx/effects';
 

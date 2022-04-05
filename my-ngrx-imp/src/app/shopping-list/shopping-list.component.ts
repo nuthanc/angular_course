@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../store/app.reducer';
-import * as ShoppingListActions from '../shopping-list/store/shopping-list.action';
+import * as ShoppingListActions from './store/shopping-list.actions';
 // import { RecipeService } from '../recipes/recipe.service';
 import { Ingredient } from '../shared/ingredient.model';
 // import { ShoppingListService } from './shopping-list.service';
