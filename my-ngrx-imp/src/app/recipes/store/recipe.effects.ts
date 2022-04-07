@@ -1,7 +1,7 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as fromApp from '../../store/app.reducer';
 import * as RecipesActions from './recipe.actions';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { withLatestFrom, switchMap, map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
@@ -33,9 +33,15 @@ export class RecipeEffects {
   fetchRecipes$ = createEffect(() =>
     this.actions$.pipe(
       ofType(RecipesActions.fetchRecipes),
-      switchMap(() => {
+      withLatestFrom(this.store.select('auth')),
+      switchMap(([_, authState]) => {
+        let params;
+        if (authState.user) {
+          params = new HttpParams().set('auth', authState.user.token);
+        }
         return this.http.get<Recipe[]>(
-          'https://my-ngrx-imp-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json/'
+          'https://my-ngrx-imp-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json/',
+          { params: params }
         );
       }),
       map((recipes) => {

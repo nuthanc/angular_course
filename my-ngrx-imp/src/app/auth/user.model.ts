@@ -1,7 +1,8 @@
 export class UserModel {
   constructor(
-    private email: string,
-    private id: string,
-    private expiresIn: Date
+    public email: string,
+    public id: string,
+    public token: string,
+    public expiresIn: Date
   ) {}
 }

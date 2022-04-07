@@ -23,6 +23,7 @@ import { RecipeService } from './recipes/recipe.service';
 import { environment } from 'src/environments/environment';
 import * as fromApp from './store/app.reducer';
 import { RecipeEffects } from './recipes/store/recipe.effects';
+import { AuthEffects } from './auth/store/auth.effects';
 import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
@@ -50,7 +51,7 @@ import { AuthComponent } from './auth/auth.component';
     StoreDevtoolsModule.instrument({
       logOnly: environment.production
     }),
-    EffectsModule.forRoot([RecipeEffects])
+    EffectsModule.forRoot([RecipeEffects, AuthEffects])
   ],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent],
