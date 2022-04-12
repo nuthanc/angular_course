@@ -24,3 +24,5 @@ export const deleteRecipe = createAction(
 export const saveRecipes = createAction('[Recipe] Save Recipe');
 
 export const fetchRecipes = createAction('[Recipe] Fetch Recipe');
+
+export const recipesError = createAction('[Recipe] Error while Fetching');

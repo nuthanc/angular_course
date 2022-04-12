@@ -3,16 +3,19 @@ import * as fromApp from '../../store/app.reducer';
 import * as RecipesActions from './recipe.actions';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Store } from '@ngrx/store';
-import { withLatestFrom, switchMap, map } from 'rxjs/operators';
+import { withLatestFrom, switchMap, map, catchError } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class RecipeEffects {
   constructor(
     private actions$: Actions,
     private http: HttpClient,
-    private store: Store<fromApp.AppState>
+    private store: Store<fromApp.AppState>,
+    private router: Router
   ) {}
 
   saveRecipes$ = createEffect(
@@ -25,7 +28,8 @@ export class RecipeEffects {
             'https://my-ngrx-imp-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json/',
             recipesState.recipes
           );
-        })
+        }),
+        catchError((error) => this.router.navigate(['/auth']))
       ),
     { dispatch: false }
   );
@@ -54,7 +58,17 @@ export class RecipeEffects {
       }),
       map((recipes) => {
         return RecipesActions.setRecipes({ recipes });
-      })
+      }),
+      catchError((error) => of(RecipesActions.recipesError()))
     )
+  );
+
+  recipesError$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(RecipesActions.recipesError),
+        map(() => this.router.navigate(['/auth']))
+      ),
+    { dispatch: false }
   );
 }
