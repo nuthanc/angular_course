@@ -1,4 +1,6 @@
 import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Router } from '@angular/router';
+
 import * as fromApp from '../../store/app.reducer';
 import * as RecipesActions from './recipe.actions';
 import { HttpClient, HttpParams } from '@angular/common/http';
@@ -13,7 +15,14 @@ import {
 import { Injectable } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { of } from 'rxjs';
-import { Router } from '@angular/router';
+import * as fromAuth from '../../auth/store/auth.reducer';
+
+const getParams = (authState: fromAuth.State) => {
+  const params = authState.user
+    ? new HttpParams().set('auth', authState.user.token)
+    : undefined;
+  return params;
+};
 
 @Injectable()
 export class RecipeEffects {
@@ -28,14 +37,17 @@ export class RecipeEffects {
     () =>
       this.actions$.pipe(
         ofType(RecipesActions.saveRecipes),
-        withLatestFrom(this.store.select('recipes')),
-        switchMap(([actionData, recipesState]) => {
-          return this.http.put(
-            'https://my-ngrx-imp-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json/',
-            recipesState.recipes
-          );
-        }),
-        catchError((error) => this.router.navigate(['/auth']))
+        withLatestFrom(this.store.select('recipes'), this.store.select('auth')),
+        switchMap(([actionData, recipesState, authState]) => {
+          const params = getParams(authState);
+          return this.http
+            .put(
+              'https://my-ngrx-imp-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json/',
+              recipesState.recipes,
+              { params: params }
+            )
+            .pipe(catchError((error) => this.router.navigate(['/auth'])));
+        })
       ),
     { dispatch: false }
   );
@@ -45,11 +57,7 @@ export class RecipeEffects {
       ofType(RecipesActions.fetchRecipes),
       withLatestFrom(this.store.select('auth')),
       switchMap(([_, authState]) => {
-        console.log('INside fetch effect');
-        let params;
-        if (authState.user) {
-          params = new HttpParams().set('auth', authState.user.token);
-        }
+        const params = getParams(authState);
         return this.http
           .get<Recipe[]>(
             'https://my-ngrx-imp-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json/',
