@@ -11,7 +11,15 @@ export const startLogin = createAction(
   props<{ email: string; password: string }>()
 );
 
+export const startLogout = createAction(
+  '[Auth] Start Logout'
+);
+
+export const autoLogin = createAction(
+  '[Auth] Auto Login',
+);
+
 export const storeUser = createAction(
   '[Auth] Store User',
-  props<{ user: UserModel }>()
+  props<{ user: UserModel | null }>()
 );

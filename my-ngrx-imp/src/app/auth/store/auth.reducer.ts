@@ -13,10 +13,17 @@ const initialState: State = {
 
 const _authReducer = createReducer(
   initialState,
-  on(AuthActions.storeUser, (state, { user }) => ({
+  on(AuthActions.storeUser, (state, { user }) => {
+    // console.log(user, state.user);
+    return {
     ...state,
     user,
-    isLoggedIn: true
+    isLoggedIn: true,
+  }}),
+  on(AuthActions.startLogout, (state) => ({
+    ...state,
+    user: null,
+    isLoggedIn: false,
   }))
 );
 

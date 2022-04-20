@@ -3,10 +3,12 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { environment } from 'src/environments/environment';
 
-import { switchMap, map, tap } from 'rxjs/operators';
+import { switchMap, map, tap, withLatestFrom } from 'rxjs/operators';
 import * as AuthActions from './auth.actions';
 import { UserModel } from '../user.model';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import * as fromApp from '../../store/app.reducer';
 
 interface SignUpResponse {
   idToken: string;
@@ -31,14 +33,17 @@ export class AuthEffects {
   constructor(
     private actions$: Actions,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private store: Store<fromApp.AppState>
   ) {}
 
-  private setUser(response: SignUpResponse | LoginResponse) {
+  private static storeUser(response: SignUpResponse | LoginResponse) {
+    console.log(response);
     const { email, localId, expiresIn, idToken } = response;
     const expiresInMilliSeconds = +expiresIn * 1000;
     const expiryDate = new Date(new Date().getTime() + expiresInMilliSeconds);
-    return new UserModel(email, localId, idToken, expiryDate);
+    const user = new UserModel(email, localId, idToken, expiryDate);
+    return AuthActions.storeUser({ user });
   }
 
   signUp$ = createEffect(() =>
@@ -52,11 +57,8 @@ export class AuthEffects {
         })
       ),
       map((response) => {
-        console.log(response);
-        const user = this.setUser(response);
-        return AuthActions.storeUser({ user });
-      }),
-      tap(() => this.router.navigate(['/']))
+        return AuthEffects.storeUser(response);
+      })
     )
   );
 
@@ -65,18 +67,59 @@ export class AuthEffects {
       ofType(AuthActions.startLogin),
       switchMap((actionData) => {
         console.log('In login effect');
-        return this.http.post<SignUpResponse>(LOGIN_URL, {
+        return this.http.post<LoginResponse>(LOGIN_URL, {
           email: actionData.email,
           password: actionData.password,
           returnSecureToken: true,
         });
       }),
       map((response) => {
-        console.log(response);
-        const user = this.setUser(response);
-        return AuthActions.storeUser({ user });
-      }),
-      tap(() => this.router.navigate(['/']))
+        return AuthEffects.storeUser(response);
+      })
     )
+  );
+
+  autoLogin$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.autoLogin),
+      map(() => {
+        const authString = localStorage.getItem('auth');
+        if (authString) {
+          const authState = JSON.parse(authString);
+          console.log(authState);
+          const { email, id, token, expiryDate } = authState.user;
+          const user = new UserModel(email, id, token, expiryDate);
+          return AuthActions.storeUser({ user });
+        } else {
+          return AuthActions.startLogout();
+        }
+      })
+    )
+  );
+
+  logout$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(AuthActions.startLogout),
+        tap(() => this.router.navigate(['/auth']))
+      ),
+    { dispatch: false }
+  );
+
+  storeUser$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(AuthActions.storeUser),
+        withLatestFrom(this.store.select('auth')),
+        map(([_, authState]) => {
+          // console.log(authState);
+          if (authState.isLoggedIn) {
+            console.log('In effect');
+            localStorage.setItem('auth', JSON.stringify(authState));
+          }
+        }),
+        tap(() => this.router.navigate(['/']))
+      ),
+    { dispatch: false }
   );
 }

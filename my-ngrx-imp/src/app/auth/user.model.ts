@@ -3,6 +3,6 @@ export class UserModel {
     public email: string,
     public id: string,
     public token: string,
-    public expiresIn: Date
+    public expiryDate: Date
   ) {}
 }
