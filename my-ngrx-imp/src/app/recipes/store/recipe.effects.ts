@@ -17,7 +17,7 @@ import { Recipe } from '../recipe.model';
 import { of } from 'rxjs';
 import * as fromAuth from '../../auth/store/auth.reducer';
 
-const getParams = (authState: fromAuth.State) => {
+const getAuthParams = (authState: fromAuth.State) => {
   const params = authState.user
     ? new HttpParams().set('auth', authState.user.token)
     : undefined;
@@ -39,7 +39,7 @@ export class RecipeEffects {
         ofType(RecipesActions.saveRecipes),
         withLatestFrom(this.store.select('recipes'), this.store.select('auth')),
         switchMap(([actionData, recipesState, authState]) => {
-          const params = getParams(authState);
+          const params = getAuthParams(authState);
           return this.http
             .put(
               'https://my-ngrx-imp-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json/',
@@ -57,7 +57,7 @@ export class RecipeEffects {
       ofType(RecipesActions.fetchRecipes),
       withLatestFrom(this.store.select('auth')),
       switchMap(([_, authState]) => {
-        const params = getParams(authState);
+        const params = getAuthParams(authState);
         return this.http
           .get<Recipe[]>(
             'https://my-ngrx-imp-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json/',

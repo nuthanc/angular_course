@@ -86,7 +86,6 @@ export class AuthEffects {
         const authString = localStorage.getItem('auth');
         if (authString) {
           const authState = JSON.parse(authString);
-          console.log(authState);
           const { email, id, token, expiryDate } = authState.user;
           const user = new UserModel(email, id, token, expiryDate);
           return AuthActions.storeUser({ user });
@@ -101,7 +100,10 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(AuthActions.startLogout),
-        tap(() => this.router.navigate(['/auth']))
+        tap(() => {
+          localStorage.removeItem('auth');
+          this.router.navigate(['/auth']);
+        })
       ),
     { dispatch: false }
   );
@@ -112,9 +114,7 @@ export class AuthEffects {
         ofType(AuthActions.storeUser),
         withLatestFrom(this.store.select('auth')),
         map(([_, authState]) => {
-          // console.log(authState);
           if (authState.isLoggedIn) {
-            console.log('In effect');
             localStorage.setItem('auth', JSON.stringify(authState));
           }
         }),

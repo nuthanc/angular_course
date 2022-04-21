@@ -67,7 +67,7 @@ export class AuthComponent implements OnInit {
 
   onAuth(email: string, password: string) {
     if (this.signUp) {
-      this.store.dispatch(AuthActions.startSignUp({ email, password}));
+      this.store.dispatch(AuthActions.startSignUp({ email, password }));
     } else {
       this.store.dispatch(AuthActions.startLogin({ email, password }));
     }
