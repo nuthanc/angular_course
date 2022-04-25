@@ -15,14 +15,7 @@ import {
 import { Injectable } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { of } from 'rxjs';
-import * as fromAuth from '../../auth/store/auth.reducer';
 
-const getAuthParams = (authState: fromAuth.State) => {
-  const params = authState.user
-    ? new HttpParams().set('auth', authState.user.token)
-    : undefined;
-  return params;
-};
 
 @Injectable()
 export class RecipeEffects {
@@ -39,12 +32,10 @@ export class RecipeEffects {
         ofType(RecipesActions.saveRecipes),
         withLatestFrom(this.store.select('recipes'), this.store.select('auth')),
         switchMap(([actionData, recipesState, authState]) => {
-          const params = getAuthParams(authState);
           return this.http
             .put(
               'https://my-ngrx-imp-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json/',
               recipesState.recipes,
-              { params: params }
             )
             .pipe(catchError((error) => this.router.navigate(['/auth'])));
         })
@@ -57,11 +48,9 @@ export class RecipeEffects {
       ofType(RecipesActions.fetchRecipes),
       withLatestFrom(this.store.select('auth')),
       switchMap(([_, authState]) => {
-        const params = getAuthParams(authState);
         return this.http
           .get<Recipe[]>(
             'https://my-ngrx-imp-default-rtdb.asia-southeast1.firebasedatabase.app/recipes.json/',
-            { params: params }
           )
           .pipe(
             map((recipes) => {

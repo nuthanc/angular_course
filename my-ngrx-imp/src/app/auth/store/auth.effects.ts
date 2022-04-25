@@ -30,6 +30,7 @@ const LOGIN_URL = `${BASE_URL}:signInWithPassword?key=${environment.api_key}`;
 
 @Injectable()
 export class AuthEffects {
+  timeoutId: null | ReturnType<typeof setTimeout> = null;
   constructor(
     private actions$: Actions,
     private http: HttpClient,
@@ -37,12 +38,14 @@ export class AuthEffects {
     private store: Store<fromApp.AppState>
   ) {}
 
-  private static storeUser(response: SignUpResponse | LoginResponse) {
-    console.log(response);
+  private storeUser(response: SignUpResponse | LoginResponse) {
     const { email, localId, expiresIn, idToken } = response;
     const expiresInMilliSeconds = +expiresIn * 1000;
     const expiryDate = new Date(new Date().getTime() + expiresInMilliSeconds);
     const user = new UserModel(email, localId, idToken, expiryDate);
+    this.timeoutId = setTimeout(() => {
+      this.store.dispatch(AuthActions.startLogout());
+    }, expiresInMilliSeconds);
     return AuthActions.storeUser({ user });
   }
 
@@ -57,7 +60,7 @@ export class AuthEffects {
         })
       ),
       map((response) => {
-        return AuthEffects.storeUser(response);
+        return this.storeUser(response);
       })
     )
   );
@@ -66,7 +69,6 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AuthActions.startLogin),
       switchMap((actionData) => {
-        console.log('In login effect');
         return this.http.post<LoginResponse>(LOGIN_URL, {
           email: actionData.email,
           password: actionData.password,
@@ -74,7 +76,7 @@ export class AuthEffects {
         });
       }),
       map((response) => {
-        return AuthEffects.storeUser(response);
+        return this.storeUser(response);
       })
     )
   );
@@ -101,6 +103,9 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(AuthActions.startLogout),
         tap(() => {
+          if (this.timeoutId) {
+            clearTimeout(this.timeoutId);
+          }
           localStorage.removeItem('auth');
           this.router.navigate(['/auth']);
         })
