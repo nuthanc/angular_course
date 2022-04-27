@@ -123,7 +123,7 @@ export class AuthEffects {
             localStorage.setItem('auth', JSON.stringify(authState));
           }
         }),
-        tap(() => this.router.navigate(['/']))
+        // tap(() => this.router.navigate(['/']))
       ),
     { dispatch: false }
   );

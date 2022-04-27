@@ -6,15 +6,18 @@ import { Store } from '@ngrx/store';
 import * as fromApp from '../../store/app.reducer';
 import * as RecipesActions from '../store/recipe.actions';
 import { map } from 'rxjs/operators';
+import { CanComponentDeactivate } from './can-deactivate-guard.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-edit',
   templateUrl: './recipe-edit.component.html',
   styleUrls: ['./recipe-edit.component.css'],
 })
-export class RecipeEditComponent implements OnInit {
+export class RecipeEditComponent implements OnInit, CanComponentDeactivate {
   id!: number;
   editMode = false;
+  safeToNavigate = false;
   recipeForm!: FormGroup;
 
   constructor(
@@ -23,6 +26,13 @@ export class RecipeEditComponent implements OnInit {
     private router: Router,
     private store: Store<fromApp.AppState>
   ) {}
+
+  canDeactivate(): boolean | Observable<boolean> | Promise<boolean> {
+    if (this.editMode && !this.safeToNavigate) {
+      return confirm('Do you want to discard the changes?')
+    }
+    return true;
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -57,6 +67,7 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onCancel() {
+    this.safeToNavigate = true;
     this.router.navigate(['../'], { relativeTo: this.route });
   }
 

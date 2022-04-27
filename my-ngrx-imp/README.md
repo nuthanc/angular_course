@@ -12,5 +12,5 @@
 
 ### Features to add
 
-* Auto login and logout
-* Auth Interceptor
+* Auth Guard/Resolver
+* CanDeactivate in edit
