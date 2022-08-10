@@ -17,7 +17,7 @@ export class AuthInterceptorService implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    let token = null;
+    let token = null; // Could've used pipe on store instead of having extra token variable
     this.store
       .select('auth')
       .pipe(take(1))

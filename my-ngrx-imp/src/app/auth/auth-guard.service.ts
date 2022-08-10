@@ -22,8 +22,6 @@ export class AuthGuardService implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return this.store
-      .select('auth')
-      .pipe(pluck('isLoggedIn'), take(1));
-  }
+      return this.store.select('auth').pipe(pluck('isLoggedIn'), take(1)); // use createUrlTree to navigate when loggedIn is false
+    }
 }

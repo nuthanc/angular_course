@@ -22,7 +22,6 @@ export class RecipeEditComponent implements OnInit, CanComponentDeactivate {
 
   constructor(
     private route: ActivatedRoute,
-    // private recipeService: RecipeService,
     private router: Router,
     private store: Store<fromApp.AppState>
   ) {}
@@ -35,6 +34,7 @@ export class RecipeEditComponent implements OnInit, CanComponentDeactivate {
   }
 
   ngOnInit(): void {
+    // Could've used Observables and async pipe for id and editMode
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
       this.editMode = params['id'] != null;
@@ -43,14 +43,7 @@ export class RecipeEditComponent implements OnInit, CanComponentDeactivate {
   }
 
   onSubmit() {
-    // const newRecipe = new Recipe(
-    //   this.recipeForm.value.name,
-    //   this.recipeForm.value.description,
-    //   this.recipeForm.value.imagePath,
-    //   this.recipeForm.value.ingredients
-    // );
     if (this.editMode) {
-      // this.recipeService.updateRecipe(this.id, this.recipeForm.value);
       this.store.dispatch(
         RecipesActions.updateRecipe({
           index: this.id,
@@ -58,7 +51,6 @@ export class RecipeEditComponent implements OnInit, CanComponentDeactivate {
         })
       );
     } else {
-      // this.recipeService.addRecipe(this.recipeForm.value);
       this.store.dispatch(
         RecipesActions.addRecipe({ recipe: this.recipeForm.value })
       );
@@ -98,10 +90,9 @@ export class RecipeEditComponent implements OnInit, CanComponentDeactivate {
     let recipeIngredients = new FormArray([]);
 
     if (this.editMode) {
-      // const recipe = this.recipeService.getRecipe(this.id);
       this.store
         .select('recipes')
-        .pipe(map((recipeState) => recipeState.recipes))
+        .pipe(map((recipeState) => recipeState.recipes)) // pluck here
         .subscribe((recipes) => {
           const recipe = recipes[this.id];
           recipeName = recipe.name;

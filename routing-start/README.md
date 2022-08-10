@@ -215,3 +215,13 @@ ng g c error --skip-tests true
   * Something like this, https://github.com/nuthanc/node_react_server/blob/master/index.js#L34-L40
 * If you can't get this to work or if it's a Old Browser, we can use useHash as true in appRouting's RouterModule's forRoot
 * This will add # and the server will ignore everything after the #, so that it uses index.html
+
+### How Routing Works
+
+* Url is changed
+* Match is passed
+  * If Direct is there, then the revised url is matched
+* Process Guards
+* Resolve and Prefetch any data required by the Route
+* Activate Component(s) associated with the Route
+* Display Template(s) into defined Router Outlets

@@ -30,7 +30,7 @@ export class RecipeEffects {
     () =>
       this.actions$.pipe(
         ofType(RecipesActions.saveRecipes),
-        withLatestFrom(this.store.select('recipes'), this.store.select('auth')),
+        withLatestFrom(this.store.select('recipes'), this.store.select('auth')), // Auth store select not required
         switchMap(([actionData, recipesState, authState]) => {
           return this.http
             .put(
@@ -46,7 +46,7 @@ export class RecipeEffects {
   fetchRecipes$ = createEffect(() =>
     this.actions$.pipe(
       ofType(RecipesActions.fetchRecipes),
-      withLatestFrom(this.store.select('auth')),
+      withLatestFrom(this.store.select('auth')),// Not required
       switchMap(([_, authState]) => {
         return this.http
           .get<Recipe[]>(

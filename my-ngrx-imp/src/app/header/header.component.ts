@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit {
   isLoggedIn = false;
 
   constructor(private store: Store<fromApp.AppState>) {
+    // I forgot to unsubscribe here
+    // Even better approach is to use selectors, Observable and async pipe(e.g isLoggedIn$ Observable assigned with store selector and pipe without subscribing)
     this.store
       .select('auth')
       .subscribe((authState) => (this.isLoggedIn = authState.isLoggedIn));

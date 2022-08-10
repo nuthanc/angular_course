@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../../store/app.reducer';
 
-interface SignUpResponse {
+interface SignUpResponse { // Use only 1 common interface for both SignUp and Login
   idToken: string;
   email: string;
   refreshToken: string;
@@ -43,7 +43,7 @@ export class AuthEffects {
     const expiresInMilliSeconds = +expiresIn * 1000;
     const expiryDate = new Date(new Date().getTime() + expiresInMilliSeconds);
     const user = new UserModel(email, localId, idToken, expiryDate);
-    this.timeoutId = setTimeout(() => {
+    this.timeoutId = setTimeout(() => { // Should've used Auth Service for this
       this.store.dispatch(AuthActions.startLogout());
     }, expiresInMilliSeconds);
     return AuthActions.storeUser({ user });
@@ -62,6 +62,7 @@ export class AuthEffects {
       map((response) => {
         return this.storeUser(response);
       })
+      // Didn't handle error with catchError(If added it should be within switchMap)
     )
   );
 
@@ -117,7 +118,7 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(AuthActions.storeUser),
-        withLatestFrom(this.store.select('auth')),
+        withLatestFrom(this.store.select('auth')), // I think this is not necessary, as user can be obtained from the action data
         map(([_, authState]) => {
           if (authState.isLoggedIn) {
             localStorage.setItem('auth', JSON.stringify(authState));

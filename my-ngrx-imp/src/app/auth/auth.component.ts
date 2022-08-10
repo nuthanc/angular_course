@@ -5,28 +5,15 @@ import { Store } from '@ngrx/store';
 import * as fromApp from '../store/app.reducer';
 import * as AuthActions from './store/auth.actions';
 
-// interface SignUpResponse {
-//   idToken: string;
-//   email: string;
-//   refreshToken: string;
-//   expiresIn: string;
-//   localId: string;
-// }
-//
-// interface LoginResponse extends SignUpResponse {
-//   kind: string;
-//   displayName: string;
-//   registered: boolean;
-// }
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css'],
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent implements OnInit { // Should've used Dynamic Alert Component for Modal
   signUp = false;
-  error = '';
+  error = ''; // Didn't handle fetching errors
 
   constructor(
     private http: HttpClient,
@@ -39,31 +26,6 @@ export class AuthComponent implements OnInit {
   toggleSignUp() {
     this.signUp = !this.signUp;
   }
-
-  // private setUser(response: SignUpResponse | LoginResponse) {
-  //   const { email, localId, expiresIn, idToken } = response;
-  //   const expiresInMilliSeconds = +expiresIn * 1000;
-  //   const expiryDate = new Date(new Date().getTime() + expiresInMilliSeconds);
-  //   const user = new UserModel(email, localId, idToken,expiryDate);
-  //   console.log(user);
-  // }
-
-  // private handleAuth(email: string, password: string, url: string) {
-  //   this.http
-  //     .post<SignUpResponse | LoginResponse>(url, {
-  //       email,
-  //       password,
-  //       returnSecureToken: true,
-  //     })
-  //     .subscribe({
-  //       next: (response) => {
-  //         this.setUser(response);
-  //         this.error = '';
-  //         this.router.navigate(['/']);
-  //       },
-  //       error: (error) => (this.error = error.error.error.message),
-  //     });
-  // }
 
   onAuth(email: string, password: string) {
     if (this.signUp) {

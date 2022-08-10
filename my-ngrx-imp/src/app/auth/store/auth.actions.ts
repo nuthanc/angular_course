@@ -15,6 +15,8 @@ export const startLogout = createAction(
   '[Auth] Start Logout'
 );
 
+// Missing actions for authenticateSuccess, authenticateFail and clearError
+
 export const autoLogin = createAction(
   '[Auth] Auto Login',
 );

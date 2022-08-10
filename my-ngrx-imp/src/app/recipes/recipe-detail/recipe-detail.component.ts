@@ -17,16 +17,15 @@ export class RecipeDetailComponent implements OnInit {
   id!: number;
 
   constructor(
-    // private recipeService: RecipeService,
     private route: ActivatedRoute,
     private router: Router,
     private store: Store<fromApp.AppState>
   ) {}
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      this.id = +params['id'];
-      // this.recipe = this.recipeService.getRecipe(this.id);
-      this.store
+    // Could've used recipe as an Observable with async pipe
+    this.route.params.subscribe((params: Params) => { // Should've piped here
+      this.id = +params['id']; // pluck rxjs operator could've been used
+      this.store // And switchMap
         .select('recipes')
         .pipe(map((recipeState) => recipeState.recipes))
         .subscribe((recipes) => {
@@ -36,7 +35,6 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   onAddToShoppingList() {
-    // this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
     this.store.dispatch(
       ShoppingListActions.addIngredients({
         ingredients: this.recipe.ingredients,
@@ -49,7 +47,6 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   onDeleteRecipe() {
-    // this.recipeService.deleteRecipe(this.id);
     this.store.dispatch(RecipesActions.deleteRecipe({ index: this.id }));
     this.router.navigate(['/recipes']);
   }

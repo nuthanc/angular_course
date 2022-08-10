@@ -2,8 +2,9 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { UserModel } from '../user.model';
 import * as AuthActions from './auth.actions';
 export interface State {
-  user: UserModel | null;
+  user: UserModel | null; // Can just be user: UserModel(Author used just User)
   isLoggedIn: boolean;
+  // Missing state variables for authError and loading(To show Loading spinner or content)
 }
 
 const initialState: State = {
@@ -14,7 +15,6 @@ const initialState: State = {
 const _authReducer = createReducer(
   initialState,
   on(AuthActions.storeUser, (state, { user }) => {
-    // console.log(user, state.user);
     return {
     ...state,
     user,
@@ -25,6 +25,7 @@ const _authReducer = createReducer(
     user: null,
     isLoggedIn: false,
   }))
+  // Missing authenticateSuccess and authenticateFail on blocks
 );
 
 export function authReducer(state: State | undefined, action: Action) {
