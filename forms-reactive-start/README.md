@@ -124,3 +124,20 @@ This adjustment is required due to the way TS works and Angular parses your temp
 * Check App Component's html
 * Author used separate file for validators
 * static methods because we can use it without instantiating
+
+### Template-driven vs Reactive Forms
+
+#### Template-driven
+
+* Easy to use
+* 2 way databinding -> Minimal component code
+* Automatically tracks form and input element state
+
+#### Reactive
+
+* More flexible and can handle more complex scenarios(Complex validation scenarios like User selection or other form state)
+* Immutable data model
+* Easier to perform an action on a value change(Like transforming to Uppercase or Partial Lookup)
+* Access to Reactive tranformations such as DebounceTime or DistinctUntilChanged
+* Can easily add input elements dynamically
+* Easier Unit Testing
