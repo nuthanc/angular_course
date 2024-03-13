@@ -56,6 +56,13 @@ export class RecipeEditComponent implements OnInit, CanComponentDeactivate {
       );
     }
     this.onCancel();
+
+    const form = new FormGroup({
+    email: new FormControl(null),
+    age: new FormControl(null),
+  });
+
+    console.log(form.value.age + 1);
   }
 
   onCancel() {
